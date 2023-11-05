@@ -1,5 +1,7 @@
 package main.java.FunctionB;
+
 import java.util.List;
+import main.java.Vertex;
 
 public class Searcher {
 
@@ -9,11 +11,10 @@ public class Searcher {
         this.maze_matrix = maze_matrix;
     }
 
-    public void Bfs(int[][] maze_matrix, int[] tom_loc, int[] jerry_loc){
-        
+    public void Bfs(int[][] maze_matrix, Vertex tom_loc, Vertex jerry_loc){
 
     }
-    public void Dfs(int[][] maze_matrix, int[] tom_loc, int[] jerry_loc){
+    public void Dfs(int[][] maze_matrix, Vertex tom_loc, Vertex jerry_loc){
 
     }
 
