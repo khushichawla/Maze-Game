@@ -1,22 +1,22 @@
 package main.java.FunctionB;
-
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.List;
 
-@Getter
-@Setter
 public class Searcher {
 
-    private SearchMethod searchMethod;
+    private int[][] maze_matrix;
 
-    public Searcher(SearchMethod searchMethod){
-        this.searchMethod = searchMethod;
+    public Searcher(int[][] maze_matrix){
+        this.maze_matrix = maze_matrix;
     }
 
+    public void Bfs(int[][] maze_matrix, int[] tom_loc, int[] jerry_loc){
+        
 
-//    List<Vertex> getShortestPath(){
-//
-//    }
+    }
+    public void Dfs(int[][] maze_matrix, int[] tom_loc, int[] jerry_loc){
+
+    }
+
 }
+
+
