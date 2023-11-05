@@ -1,4 +1,5 @@
-package main.java;
+package org.Comp3111F23G7;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
