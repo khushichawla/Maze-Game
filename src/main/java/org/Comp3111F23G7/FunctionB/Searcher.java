@@ -2,6 +2,7 @@ package org.Comp3111F23G7.FunctionB;
 
 import org.Comp3111F23G7.Vertex;
 
+import java.util.*;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.security.spec.ECField;
@@ -65,6 +66,65 @@ public class Searcher {
             current = current.parent;
         }
 
+        return path.toArray(new Vertex[0]);
+    }
+
+    public Vertex[] dijkstra(Vertex start, Vertex end) {
+        // Initialize distances array with infinity
+        int[][] distances = new int[maze_matrix.length][maze_matrix[0].length];
+        for (int[] row : distances) {
+            Arrays.fill(row, Integer.MAX_VALUE);
+        }
+        distances[start.getY()][start.getX()] = 0;
+
+        // Priority queue to keep track of vertices to be evaluated
+        PriorityQueue<NodeState> queue = new PriorityQueue<>(Comparator.comparingInt(ns -> distances[ns.vertex.getY()][ns.vertex.getX()]));
+
+        // Initialize prev array to reconstruct the path later
+        Vertex[][] prev = new Vertex[maze_matrix.length][maze_matrix[0].length];
+
+        // Add the start vertex to the queue
+        queue.add(new NodeState(start, null));
+
+        while (!queue.isEmpty()) {
+            NodeState currentState = queue.poll();
+            Vertex currentVertex = currentState.vertex;
+
+            // If we reached the end vertex
+            if (currentVertex.equals(end)) {
+                break;
+            }
+
+            // Visit each neighbor of the current vertex
+            for (int[] direction : new int[][]{{0, 1}, {1, 0}, {0, -1}, {-1, 0}}) { // down, right, up, left
+                int neighborX = currentVertex.getX() + direction[0];
+                int neighborY = currentVertex.getY() + direction[1];
+
+                // Skip if out of bounds or it's a wall
+                if (neighborX < 0 || neighborY < 0 || neighborX >= maze_matrix[0].length || neighborY >= maze_matrix.length || maze_matrix[neighborY][neighborX] == 1) {
+                    continue;
+                }
+
+                // Calculate new distance
+                int newDist = distances[currentVertex.getY()][currentVertex.getX()] + 1;
+                if (newDist < distances[neighborY][neighborX]) {
+                    distances[neighborY][neighborX] = newDist;
+                    prev[neighborY][neighborX] = currentVertex;
+                    queue.add(new NodeState(new Vertex(neighborX, neighborY), currentState));
+                }
+            }
+        }
+
+        // Reconstruct the path from end to start
+        List<Vertex> path = new ArrayList<>();
+        for (Vertex at = end; at != null && prev[at.getY()][at.getX()] != null; at = prev[at.getY()][at.getX()]) {
+            path.add(at);
+        }
+        path.add(start); // Add the start vertex
+
+        Collections.reverse(path);
+
+        // Convert to Vertex array
         return path.toArray(new Vertex[0]);
     }
 
