@@ -90,6 +90,7 @@ public class Game {
         int[] oldTom = new int[2];
         // Get the player's input for Jerry's move
         while(true){
+            System.out.println("Jerry's position is denoted by 2 and Tom's position is denoted by 3 ");
             System.out.print("Enter Jerry's next move (WASD), Press Q to exit the game: ");
             String input = scanner.nextLine();
             int[] jerryMove = calculateNextMove(jerry, input);
