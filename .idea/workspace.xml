@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="946f92b9-3f63-4400-863e-0e5cc43d347b" name="Changes" comment="dijkstra with requirements test case">
-      <change beforePath="$PROJECT_DIR$/maze_output.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/Comp3111F23G7/FunctionB/MainProg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/Comp3111F23G7/FunctionB/MainProg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/Comp3111F23G7/FunctionB/Searcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/Comp3111F23G7/FunctionB/Searcher.java" afterDir="false" />
+    <list default="true" id="946f92b9-3f63-4400-863e-0e5cc43d347b" name="Changes" comment="pull">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/Comp3111F23G7/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Comp3111F23G7.test.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,15 +76,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;virginia&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;proofread&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "Vedika",
+    "settings.editor.selected.configurable": "proofread"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="MainProg" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.Comp3111F23G7.FunctionB.MainProg" />
@@ -164,7 +165,8 @@
     <MESSAGE value="add random 1" />
     <MESSAGE value="BFS with requirements test case" />
     <MESSAGE value="dijkstra with requirements test case" />
-    <option name="LAST_COMMIT_MESSAGE" value="dijkstra with requirements test case" />
+    <MESSAGE value="pull" />
+    <option name="LAST_COMMIT_MESSAGE" value="pull" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
