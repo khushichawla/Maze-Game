@@ -9,19 +9,9 @@ import java.util.Queue;
 
 public class Searcher {
     private int[][] maze_matrix;
-    private int[][] output_matrix;
 
     public Searcher(int[][] maze_matrix) {
         this.maze_matrix = maze_matrix;
-        this.output_matrix = new int[30][30];
-        for (int i = 0; i< maze_matrix.length; ++i){
-            for (int j = 0; j< maze_matrix.length; ++j) {
-                if (maze_matrix[j][i] == 0) {
-                    output_matrix[j][i] = 1;
-                } else
-                    output_matrix[j][i] = 4;
-            }
-        }
     }
 
     public Vertex[] bfs(Vertex start, Vertex end) {
@@ -209,25 +199,6 @@ public class Searcher {
         return v.getX() >= 0 && v.getX() < maze_matrix[0].length && v.getY() >= 0 && v.getY() < maze_matrix.length && maze_matrix[v.getY()][v.getX()] == 0;
     }
 
-
-    public void colorMazeWithPath(Vertex[] path, int color){
-        for (Vertex v: path){
-            int x_loc = v.getX();
-            int y_loc = v.getY();
-            output_matrix[y_loc][x_loc] = color;
-        }
-    }
-
-    public void outputMaze() throws IOException {
-        try (FileWriter writer = new FileWriter("maze_output.txt")) {
-            for (int[] row : output_matrix) {
-                for (int cell : row) {
-                    writer.write(Integer.toString(cell));
-                }
-                writer.write("\n");
-            }
-        }
-    }
 
     private class NodeState {
         Vertex vertex;
