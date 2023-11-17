@@ -40,7 +40,7 @@ public class MainProg {
                         {1,1,1,1,1,1,0,1,0,0,0,0,1,0,0,0,0,0,1,1,0,0,1,1,1,1,0,0,1,1},
                         {1,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,0,0,1,1,1,1,0}};
         Searcher s =  new Searcher(matrix);
-        Vertex[] path = s.dijkstra(new Vertex(0,12), new Vertex(29,1));
+        Vertex[] path = s.bfs(new Vertex(0,12), new Vertex(29,1));
         int shortestpathlen = path.length;
         List<Vertex[]> altpaths = s.findDistinctPaths(new Vertex(0,12), new Vertex(29,1),5);
         s.colorMazeWithPath(path, 2);

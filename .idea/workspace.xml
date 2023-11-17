@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="946f92b9-3f63-4400-863e-0e5cc43d347b" name="Changes" comment="dijkstra with requirements test case">
-      <change beforePath="$PROJECT_DIR$/maze_output.txt" beforeDir="false" />
+    <list default="true" id="946f92b9-3f63-4400-863e-0e5cc43d347b" name="Changes" comment="Writing Junit5 test case">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maze_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/maze_output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/Comp3111F23G7/FunctionB/MainProg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/Comp3111F23G7/FunctionB/MainProg.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/Comp3111F23G7/FunctionB/Searcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/Comp3111F23G7/FunctionB/Searcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/Comp3111F23G7/SearcherTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/Comp3111F23G7/SearcherTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +86,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;proofread&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.Tests in 'org.Comp3111F23G7'">
     <configuration name="MainProg" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.Comp3111F23G7.FunctionB.MainProg" />
       <module name="Comp3111F23G7.main" />
@@ -98,8 +100,58 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SearcherTest.testFindDistinctPathsWithProvidedMaze" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.Comp3111F23G7.SearcherTest.testFindDistinctPathsWithProvidedMaze&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests in 'org.Comp3111F23G7'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.Comp3111F23G7.*&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Tests in 'org.Comp3111F23G7'" />
+        <item itemvalue="Gradle.SearcherTest.testFindDistinctPathsWithProvidedMaze" />
         <item itemvalue="Application.MainProg" />
       </list>
     </recent_temporary>
@@ -145,7 +197,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699550036124</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Find more than 3 but less than 6 paths using DFS">
+      <option name="closed" value="true" />
+      <created>1699589395589</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1699589395589</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Writing Junit5 test case">
+      <option name="closed" value="true" />
+      <created>1699594396543</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1699594396543</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -164,10 +232,15 @@
     <MESSAGE value="add random 1" />
     <MESSAGE value="BFS with requirements test case" />
     <MESSAGE value="dijkstra with requirements test case" />
-    <option name="LAST_COMMIT_MESSAGE" value="dijkstra with requirements test case" />
+    <MESSAGE value="Find more than 3 but less than 6 paths using DFS" />
+    <MESSAGE value="Writing Junit5 test case" />
+    <option name="LAST_COMMIT_MESSAGE" value="Writing Junit5 test case" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Comp3111F23G7$Tests_in__org_Comp3111F23G7_.ic" NAME="Tests in 'org.Comp3111F23G7' Coverage Results" MODIFIED="1700237923402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
