@@ -2,7 +2,6 @@ package org.Comp3111F23G7.FunctionB;
 
 import org.Comp3111F23G7.Vertex;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Iterator;
@@ -99,29 +98,29 @@ public class OutputMaze {
         }
     }
 
-    public void printPath(Vertex[] path){
-        System.out.println("\nfound shortest path, its length: "+ path.length);
-        for(Vertex v :path){
-            System.out.print("[");
-            System.out.print(v.getX());
-            System.out.print(" ");
-            System.out.print(v.getY());
-            System.out.print("]");
-        }
-
-    }
-    public void printPaths(List<Vertex[]> altpaths){
-        System.out.println("\nfound other paths");
-        for (Vertex[] i : altpaths) {
-            System.out.println("\nThe path, its length: " + i.length);
-            for (Vertex v : i) {
-                System.out.print("[");
-                System.out.print(v.getX());
-                System.out.print(" ");
-                System.out.print(v.getY());
-                System.out.print("]");
-            }
-        }
-    }
+//    public void printPath(Vertex[] path){
+//        System.out.println("\nfound shortest path, its length: "+ path.length);
+//        for(Vertex v :path){
+//            System.out.print("[");
+//            System.out.print(v.getX());
+//            System.out.print(" ");
+//            System.out.print(v.getY());
+//            System.out.print("]");
+//        }
+//
+//    }
+//    public void printPaths(List<Vertex[]> altpaths){
+//        System.out.println("\nfound other paths");
+//        for (Vertex[] i : altpaths) {
+//            System.out.println("\nThe path, its length: " + i.length);
+//            for (Vertex v : i) {
+//                System.out.print("[");
+//                System.out.print(v.getX());
+//                System.out.print(" ");
+//                System.out.print(v.getY());
+//                System.out.print("]");
+//            }
+//        }
+//    }
 }
 
