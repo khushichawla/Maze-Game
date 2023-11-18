@@ -26,6 +26,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand />
@@ -38,6 +41,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
         <option value="JUnit5 Test Class" />
       </list>
@@ -75,7 +79,9 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2XkXJxBnpMEZt4pk5SIwBh3B1U8" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -91,6 +97,7 @@
     "settings.editor.selected.configurable": "proofread"
   }
 }]]></component>
+
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -100,6 +107,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.MainProgram">
+
     <configuration name="MainProg" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.Comp3111F23G7.FunctionB.MainProg" />
       <module name="Comp3111F23G7.main" />
@@ -240,7 +248,31 @@
       <option name="project" value="LOCAL" />
       <updated>1699594396543</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="changed starting and ending point in the test case">
+      <option name="closed" value="true" />
+      <created>1700238559887</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1700238559887</updated>
+    </task>
+    <task id="LOCAL-00008" summary="outputMaze class">
+      <option name="closed" value="true" />
+      <created>1700239849175</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1700239849175</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Created the required path output csv file">
+      <option name="closed" value="true" />
+      <created>1700292346042</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1700292346042</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -248,7 +280,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="virginia" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -261,13 +305,16 @@
     <MESSAGE value="dijkstra with requirements test case" />
     <MESSAGE value="Find more than 3 but less than 6 paths using DFS" />
     <MESSAGE value="Writing Junit5 test case" />
-    <option name="LAST_COMMIT_MESSAGE" value="Writing Junit5 test case" />
+    <MESSAGE value="changed starting and ending point in the test case" />
+    <MESSAGE value="outputMaze class" />
+    <MESSAGE value="Created the required path output csv file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created the required path output csv file" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Comp3111F23G7$Tests_in__org_Comp3111F23G7_.ic" NAME="Tests in 'org.Comp3111F23G7' Coverage Results" MODIFIED="1700237923402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G7$Tests_in__org_Comp3111F23G7_.ic" NAME="Tests in 'org.Comp3111F23G7' Coverage Results" MODIFIED="1700293712268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
