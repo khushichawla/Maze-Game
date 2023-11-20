@@ -1,6 +1,14 @@
 package org.Comp3111F23G7.FunctionA;
 import javax.swing.*;
+
+/**
+ * Main class to run the maze generator function
+ */
 public class MainProgram {
+    /**
+     * Main function
+     * @param args
+     */
     public static void main(String[] args) {
         int rows = 30;
         int cols = 30;

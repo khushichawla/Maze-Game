@@ -1,9 +1,11 @@
 package org.Comp3111F23G7.FunctionA;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * MazeGenerator Class to generate the maze in a text file
+ */
 public class MazeGenerator {
     private char[][] maze;
     private int rows;
@@ -11,6 +13,11 @@ public class MazeGenerator {
     private Point start;
     private Point end;
 
+    /**
+     * Constructor 1
+     * @param rows - int number of rows
+     * @param cols - int number of columns
+     */
     public MazeGenerator(int rows, int cols) {
         this.rows = rows;
         this.cols = cols;
@@ -35,6 +42,17 @@ public class MazeGenerator {
         maze[end.r][end.c] = '3';
         end.isExit = true;
 
+        // Generate the maze using Prim's algorithm
+        generateMazeUsingPrimsAlgorithm();
+
+        // Add additional paths using DFS
+        addAdditionalPathsUsingDFS();
+    }
+
+    /**
+     * generateMazeUsingPrimsAlgorithm function to generate maze using Prim's algorithm
+     */
+    private void generateMazeUsingPrimsAlgorithm() {
         // Iterate through direct neighbors of the start node
         ArrayList<Point> frontier = new ArrayList<>();
         for (int x = -1; x <= 1; x++) {
@@ -42,13 +60,16 @@ public class MazeGenerator {
                 if ((x == 0 && y == 0) || (x != 0 && y != 0)) {
                     continue;
                 }
-                try {
-                    if (maze[start.r + x][start.c + y + 1] == '1') {
-                        continue;
-                    }
-                } catch (Exception e) {
+                if (maze[start.r + x][start.c + y + 1] == '1') {
                     continue;
                 }
+//                try {
+//                    if (maze[start.r + x][start.c + y + 1] == '1') {
+//                        continue;
+//                    }
+//                } catch (Exception e) {
+//                    continue;
+//                }
                 // Add eligible points to the frontier
                 frontier.add(new Point(start.r + x, start.c + y + 1, start));
             }
@@ -95,29 +116,65 @@ public class MazeGenerator {
                 maze[last.r][last.c] = '1';
                 last.isExit = true;
             }
-
-        }
-
-        // Perform pathfinding algorithm to find a path from start to end
-        boolean[][] visited = new boolean[rows][cols];
-        boolean pathFound = findPath(maze, start.r, start.c, end.r, end.c, visited);
-
-        // If there is only one path, create a branching path
-        if (!pathFound) {
-            // Randomly select a point on the existing path
-            int randomRow = start.r;
-            int randomCol = start.c;
-            while (randomRow == start.r && randomCol == start.c) {
-                randomRow = (int) (Math.random() * rows);
-                randomCol = (int) (Math.random() * cols);
-            }
-
-            // Remove the wall adjacent to the selected point
-            maze[randomRow][randomCol] = '1';
-            maze[randomRow][randomCol + 1] = '1';
         }
     }
 
+    /**
+     * addAdditionalPathsUsingDFS function to add additional paths using DFS
+     */
+    private void addAdditionalPathsUsingDFS() {
+        // Perform DFS to add additional paths
+        boolean[][] visited = new boolean[rows][cols];
+        int pathsAdded = 0; // Counter for paths added
+        dfs(maze, start.r, start.c, visited, pathsAdded);
+    }
+
+    /**
+     * dfs function to perform depth-first search
+     * @param maze - generated maze
+     * @param row - current row
+     * @param col - current column
+     * @param visited - boolean 2D array of visited indices
+     * @param pathsAdded - number of paths added so far
+     */
+    private void dfs(char[][] maze, int row, int col, boolean[][] visited, int pathsAdded) {
+        visited[row][col] = true;
+        maze[row][col] = '1';
+
+        // Perform DFS on the unvisited neighbors
+        int[] dx = {-1, 0, 1, 0};
+        int[] dy = {0, 1, 0, -1};
+        for (int i = 0; i < 4; i++) {
+            int newRow = row + dx[i];
+            int newCol = col + dy[i];
+            if (isValid(newRow, newCol) && !visited[newRow][newCol] && maze[newRow][newCol] != '1') {
+                pathsAdded++;
+                if (pathsAdded <= 2) { // Limit the number of additional paths to 2
+                    int wallRow = row + dx[i] / 2; // Calculate the row of the wall to open
+                    int wallCol = col + dy[i] / 2; // Calculate the column of the wall to open
+                    maze[wallRow][wallCol] = '1'; // Open the wall
+                    dfs(maze, newRow, newCol, visited, pathsAdded);
+                }
+            }
+        }
+    }
+
+    /**
+     * isValid function to check if the given indices are valid
+     * @param row - row index
+     * @param col - column index
+     * @return true if the indices are valid, false otherwise
+     */
+    private boolean isValid(int row, int col) {
+        return row >= 0 && row < rows && col >= 0 && col < cols;
+    }
+
+
+
+    /**
+     * saveMazeToFile function to save generated maze in text file
+     * @param filename - string name of file to save maze in
+     */
     public void saveMazeToFile(String filename) {
         // Print final maze
         try (FileWriter writer = new FileWriter(filename)) {
@@ -164,13 +221,22 @@ public class MazeGenerator {
             e.printStackTrace();
         }
     }
-
+//
+    /**
+     * Point class
+     */
     static class Point {
         Integer r;
         Integer c;
         Point parent;
         boolean isExit;
 
+        /**
+         * Constructor
+         * @param x - int x point
+         * @param y - int y point
+         * @param p - int p location
+         */
         public Point(int x, int y, Point p) {
             r = x;
             c = y;
@@ -178,7 +244,10 @@ public class MazeGenerator {
             isExit = false;
         }
 
-        // Compute opposite node given that it is in the other direction from the parent
+        /**
+         * opposite function
+         * @return - returns the opposite point node given that it is in the other direction from parent
+         */
         public Point opposite() {
             if (this.r.compareTo(parent.r) != 0) {
                 return new Point(this.r + this.r.compareTo(parent.r), this.c, this);
@@ -188,46 +257,5 @@ public class MazeGenerator {
             }
             return null;
         }
-    }
-
-    private static boolean findPath(char[][] maze, int startRow, int startCol, int endRow, int endCol, boolean[][] visited) {
-        if (startRow == endRow && startCol == endCol) {
-            return true; // Path found
-        }
-
-        visited[startRow][startCol] = true;
-
-        // Explore neighbors in the four cardinal directions
-        int[] dx = {-1, 0, 1, 0};
-        int[] dy = {0, 1, 0, -1};
-        for (int i = 0; i < 4; i++) {
-            int newRow = startRow + dx[i];
-            int newCol = startCol + dy[i];
-
-            if (isValidMove(maze, newRow, newCol, visited)) {
-                if (findPath(maze, newRow, newCol, endRow, endCol, visited)) {
-                    return true;
-                }
-            }
-        }
-
-        return false; // Path not found
-    }
-
-    private static boolean isValidMove(char[][] maze, int row, int col, boolean[][] visited) {
-        int numRows = maze.length;
-        int numCols = maze[0].length;
-
-        // Check if the move is within the boundaries of the maze
-        if (row < 0 || row >= numRows || col < 0 || col >= numCols) {
-            return false;
-        }
-
-        // Check if the move leads to a valid path (not a wall) and has not been visited before
-        if (maze[row][col] == '0' || visited[row][col]) {
-            return false;
-        }
-
-        return true; // Move is valid
     }
 }
