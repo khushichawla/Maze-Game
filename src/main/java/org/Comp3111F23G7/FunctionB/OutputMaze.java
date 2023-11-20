@@ -21,7 +21,7 @@ public class OutputMaze {
                 if (maze_matrix[j][i] == 0) {
                     output_matrix[j][i] = 1;
                 } else
-                    output_matrix[j][i] = 4;
+                    output_matrix[j][i] = 9;
             }
         }
         try {
@@ -89,12 +89,16 @@ public class OutputMaze {
 
     public void outputMaze() throws IOException {
         try (FileWriter writer = new FileWriter("src/main/java/org/Comp3111F23G7/maze_output.txt")) {
+            writer.write("44444444444444444444444444444444\n");
             for (int[] row : output_matrix) {
+                    writer.write(Integer.toString(4));
                 for (int cell : row) {
                     writer.write(Integer.toString(cell));
                 }
+                writer.write(Integer.toString(4));
                 writer.write("\n");
             }
+            writer.write("44444444444444444444444444444444");
         }
     }
 
