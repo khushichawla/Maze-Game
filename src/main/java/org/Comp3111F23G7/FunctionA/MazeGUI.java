@@ -6,9 +6,16 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * MazeGUI class
+ */
 public class MazeGUI {
-    // private int[][] maze;
+    public static boolean isVisible = false;
 
+    /**
+     * Main function
+     * @param args
+     */
     public static void main(String[] args) {
         // Specify the path to the text file containing the maze
         String mazeFilePath = "maze.txt";
@@ -20,6 +27,11 @@ public class MazeGUI {
         SwingUtilities.invokeLater(() -> createAndShowMazeGUI(maze));
     }
 
+    /**
+     * loadMazeFromFile
+     * @param filePath - String name of file to load
+     * @return - 2D int array of maze
+     */
     public static int[][] loadMazeFromFile(String filePath) {
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
@@ -49,7 +61,16 @@ public class MazeGUI {
         return null;
     }
 
+    /**
+     * createAndShowMazeGUI
+     * @param maze - int 2D array of maze
+     */
     public static void createAndShowMazeGUI(int[][] maze) {
+//        if (maze.length != 30) {
+//            isVisible = false;
+//            System.out.println("Invalid maze: Maze is null");
+//            return;
+//        }
         int rows = maze.length;
         int cols = maze[0].length;
 
@@ -67,14 +88,19 @@ public class MazeGUI {
                 } else if (maze[row][col] == 1) {
                     panel.setBackground(Color.WHITE);
                 } else if (maze[row][col] == 4) {
-                    panel.setBackground(Color.black);
+                    panel.setBackground(Color.BLACK);
                 } else panel.setBackground(Color.GRAY);
                 // panel.setBackground(maze[row][col] == 0 ? Color.GRAY : Color.WHITE);
                 frame.add(panel);
             }
         }
 
+        isVisible = true;
         frame.pack();
         frame.setVisible(true);
+    }
+
+    public boolean isGUIVisible() {
+        return isVisible;
     }
 }
