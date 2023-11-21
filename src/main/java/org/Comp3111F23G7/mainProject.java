@@ -26,15 +26,16 @@ public class mainProject {
         SwingUtilities.invokeLater(() -> MazeGUI.createAndShowMazeGUI(maze));
 
         Searcher s = new Searcher(maze);
-        Vertex[] path = s.bfs(new Vertex(0, 12), new Vertex(29, 1));
+        Vertex[] path = s.bfs(mazeGenerator.getPointStart(),mazeGenerator.getPointEnd());
         int shortestpathlen = path.length;
-        List<Vertex[]> altpaths = s.findDistinctPaths(new Vertex(0, 12), new Vertex(29, 1), 5);
+        List<Vertex[]> altpaths = s.findDistinctPaths(mazeGenerator.getPointStart(),mazeGenerator.getPointEnd(), 5);
         OutputMaze m = null;
         try {
-            m = new OutputMaze(maze, shortestpathlen);
+            m = new OutputMaze(maze, shortestpathlen, mazeGenerator.getPointStart(),mazeGenerator.getPointEnd());
+            m.printPath(path);
             m.colorMazeWithPath(path);
             m.colorMazeWithMultiPath(altpaths, shortestpathlen);
-            m.outputMaze();
+            m.outputTextMaze();
         } catch (Exception e) {
             System.out.println(e);
         } finally {
@@ -42,6 +43,7 @@ public class mainProject {
                 m.closeFileWriter();
             }
         }
+
         int[][] mazeSP = MazeGUI.loadMazeFromFile("maze_output.txt");
         SwingUtilities.invokeLater(() -> MazeGUI.createAndShowMazeGUI(mazeSP));
     }

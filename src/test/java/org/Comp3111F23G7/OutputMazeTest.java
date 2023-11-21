@@ -66,7 +66,7 @@ class OutputMazeTest {
     @BeforeEach
     void setUp() throws IOException {
         testMatrix = new int[30][30]; // Initialize with some test data
-        outputMaze = new OutputMaze(testMatrix, 49); // Using the length of your shortest path
+        outputMaze = new OutputMaze(testMatrix, 49, new Vertex(0, 12), new Vertex(29, 1)); // Using the length of your shortest path
     }
 
     @AfterEach

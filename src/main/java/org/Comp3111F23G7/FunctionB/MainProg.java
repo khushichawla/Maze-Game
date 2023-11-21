@@ -41,10 +41,10 @@ public class MainProg {
         List<Vertex[]> altpaths = s.findDistinctPaths(new Vertex(0, 12), new Vertex(29, 1), 5);
         OutputMaze m = null;
         try {
-            m = new OutputMaze(matrix, shortestpathlen);
+            m = new OutputMaze(matrix, shortestpathlen,new Vertex(0, 12), new Vertex(29, 1));
             m.colorMazeWithPath(path);
             m.colorMazeWithMultiPath(altpaths, shortestpathlen);
-            m.outputMaze();
+            m.outputTextMaze();
 //            m.printPath(path);
 //            m.printPaths(altpaths);
         } catch (Exception e) {

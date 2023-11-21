@@ -89,6 +89,8 @@ public class MazeGUI {
                     panel.setBackground(Color.WHITE);
                 } else if (maze[row][col] == 4) {
                     panel.setBackground(Color.BLACK);
+                } else if (maze[row][col] == 5) {
+                    panel.setBackground(Color.YELLOW);
                 } else panel.setBackground(Color.GRAY);
                 // panel.setBackground(maze[row][col] == 0 ? Color.GRAY : Color.WHITE);
                 frame.add(panel);

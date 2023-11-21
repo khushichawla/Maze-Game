@@ -1,4 +1,6 @@
 package org.Comp3111F23G7.FunctionA;
+import org.Comp3111F23G7.Vertex;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,6 +14,14 @@ public class MazeGenerator {
     private int cols;
     private Point start;
     private Point end;
+
+    public Vertex getPointStart(){
+        return new Vertex(start.c, start.r);
+    }
+
+    public Vertex getPointEnd(){
+        return new Vertex(end.c, end.r);
+    }
 
     /**
      * Constructor 1

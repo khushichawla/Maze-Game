@@ -14,16 +14,24 @@ public class OutputMaze {
     private int op_cnt;
     private int shortestpathlen;
 
-    public OutputMaze (int[][] maze_matrix, int shortestpathlen) throws IOException {
+    private Vertex start;
+    private Vertex end;
+
+
+    public OutputMaze (int[][] maze_matrix, int shortestpathlen, Vertex start, Vertex end) throws IOException {
         this.output_matrix = new int[30][30];
         for (int i = 0; i< maze_matrix.length; ++i) {
             for (int j = 0; j < maze_matrix.length; ++j) {
                 if (maze_matrix[j][i] == 0) {
-                    output_matrix[j][i] = 1;
-                } else
                     output_matrix[j][i] = 9;
+                } else
+                    output_matrix[j][i] = 1;
             }
         }
+        this.start = start;
+        this.end = end;
+        output_matrix[start.getY()][start.getX()] = 2;
+        output_matrix[end.getY()][end.getX()] = 3;
         try {
             this.fileWriter = new FileWriter("src/main/java/org/Comp3111F23G7/FunctionB/paths.csv", true); // true for append mode
         } catch (IOException e) {
@@ -53,6 +61,9 @@ public class OutputMaze {
             csvLine.append(", (").append(index++).append(",").append(x_loc).append(",").append(y_loc).append(")");
         }
         csvLine.append(";");
+
+        output_matrix[start.getY()][start.getX()] = 2;
+        output_matrix[end.getY()][end.getX()] = 3;
 
         try {
             fileWriter.write(csvLine.toString() + "\n");
@@ -87,7 +98,7 @@ public class OutputMaze {
         }
     }
 
-    public void outputMaze() throws IOException {
+    public void outputTextMaze() throws IOException {
         try (FileWriter writer = new FileWriter("maze_output.txt")) {
             writer.write("44444444444444444444444444444444\n");
             for (int[] row : output_matrix) {
@@ -102,17 +113,17 @@ public class OutputMaze {
         }
     }
 
-//    public void printPath(Vertex[] path){
-//        System.out.println("\nfound shortest path, its length: "+ path.length);
-//        for(Vertex v :path){
-//            System.out.print("[");
-//            System.out.print(v.getX());
-//            System.out.print(" ");
-//            System.out.print(v.getY());
-//            System.out.print("]");
-//        }
-//
-//    }
+    public void printPath(Vertex[] path){
+        System.out.println("\nfound shortest path, its length: "+ path.length);
+        for(Vertex v :path){
+            System.out.print("[");
+            System.out.print(v.getX());
+            System.out.print(" ");
+            System.out.print(v.getY());
+            System.out.print("]");
+        }
+
+    }
 //    public void printPaths(List<Vertex[]> altpaths){
 //        System.out.println("\nfound other paths");
 //        for (Vertex[] i : altpaths) {
