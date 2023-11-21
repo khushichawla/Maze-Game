@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="946f92b9-3f63-4400-863e-0e5cc43d347b" name="Changes" comment="Updating Function A - MazeGenerator.java procedure and some functionality of MazeGUI.java">
-      <change afterPath="$PROJECT_DIR$/mazeTest1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mazeTest2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mazeTest3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mazeTest4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mazeTest5.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/Comp3111F23G7/FunctionA/mazeTest.txt" afterDir="false" />
+    <list default="true" id="946f92b9-3f63-4400-863e-0e5cc43d347b" name="Changes" comment="Adding JUnit test cases for Function A">
+      <change afterPath="$PROJECT_DIR$/maze.text" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/Comp3111F23G7/FunctionA/maze.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/Comp3111F23G7/mainProject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/Comp3111F23G7/FunctionA/MazeGUITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/Comp3111F23G7/FunctionA/MazeGUITest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/Comp3111F23G7/FunctionA/MazeGeneratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/Comp3111F23G7/FunctionA/MazeGeneratorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +38,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -58,7 +53,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="pseudo_main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -117,7 +112,46 @@
       <recent name="org.Comp3111F23G7.FunctionA" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.MainProgramTest.mainFunction">
+  <component name="RunManager" selected="Application.mainProject">
+    <configuration name="MainProg" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.Comp3111F23G7.FunctionB.MainProg" />
+      <module name="Comp3111F23G7.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.Comp3111F23G7.FunctionB.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainProgram" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.Comp3111F23G7.FunctionA.MainProgram" />
+      <module name="Comp3111F23G7.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.Comp3111F23G7.FunctionA.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mainProject" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.Comp3111F23G7.mainProject" />
+      <module name="Comp3111F23G7.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.Comp3111F23G7.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainProgramTest.mainFunction" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -132,54 +166,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;org.Comp3111F23G7.FunctionA.MainProgramTest.mainFunction&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>true</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="MazeGUITest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;org.Comp3111F23G7.FunctionA.MazeGUITest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>true</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="MazeGUITest.createAndShowMazeGUI_MazeWithInvalidColor_PanelsHaveDefaultBackgroundColor" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;org.Comp3111F23G7.FunctionA.MazeGUITest.createAndShowMazeGUI_MazeWithInvalidColor_PanelsHaveDefaultBackgroundColor&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -214,50 +200,13 @@
       <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="MazeGeneratorTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;org.Comp3111F23G7.FunctionA.MazeGeneratorTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>true</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="Comp3111F23G7" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Comp3111F23G7" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.MainProgramTest.mainFunction" />
-        <item itemvalue="Gradle.MazeGUITest" />
-        <item itemvalue="Gradle.MazeGUITest.createAndShowMazeGUI_MazeWithInvalidColor_PanelsHaveDefaultBackgroundColor" />
-        <item itemvalue="Gradle.MazeGeneratorTest" />
+        <item itemvalue="Application.mainProject" />
+        <item itemvalue="Application.MainProg" />
+        <item itemvalue="Application.MainProgram" />
         <item itemvalue="Gradle.MazeGUITest.main_ValidMazeFile_CreatesAndShowsGUI" />
+        <item itemvalue="Gradle.MainProgramTest.mainFunction" />
       </list>
     </recent_temporary>
   </component>
@@ -325,7 +274,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700474513777</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Adding JUnit test cases for Function A">
+      <created>1700474563560</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1700474563560</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -347,7 +303,8 @@
     <MESSAGE value="Find more than 3 but less than 6 paths using DFS" />
     <MESSAGE value="Writing Junit5 test case" />
     <MESSAGE value="Updating Function A - MazeGenerator.java procedure and some functionality of MazeGUI.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating Function A - MazeGenerator.java procedure and some functionality of MazeGUI.java" />
+    <MESSAGE value="Adding JUnit test cases for Function A" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding JUnit test cases for Function A" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
