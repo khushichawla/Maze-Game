@@ -88,7 +88,7 @@ public class OutputMaze {
     }
 
     public void outputMaze() throws IOException {
-        try (FileWriter writer = new FileWriter("src/main/java/org/Comp3111F23G7/maze_output.txt")) {
+        try (FileWriter writer = new FileWriter("maze_output.txt")) {
             writer.write("44444444444444444444444444444444\n");
             for (int[] row : output_matrix) {
                     writer.write(Integer.toString(4));
