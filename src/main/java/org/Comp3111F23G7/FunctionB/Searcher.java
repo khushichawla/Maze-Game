@@ -12,9 +12,13 @@ public class Searcher {
 
     public Searcher(int[][] maze_matrix) {
         this.maze_matrix = maze_matrix;
+
     }
 
     public Vertex[] bfs(Vertex start, Vertex end) {
+        this.maze_matrix[start.getY()][start.getX()] =0;
+        this.maze_matrix[end.getY()][end.getX()] =0;
+
         if (maze_matrix[start.getY()][start.getX()] == 1 || maze_matrix[end.getY()][end.getX()] == 1) {
             return new Vertex[0]; // Start or end is a wall
         }
@@ -67,6 +71,16 @@ public class Searcher {
     }
 
     public Vertex[] dijkstra(Vertex start, Vertex end) {
+        this.maze_matrix[start.getY()][start.getX()] =0;
+        this.maze_matrix[end.getY()][end.getX()] =0;
+
+        for(int j=0;j< maze_matrix.length;++j){
+            for (int i=0; i<maze_matrix.length;++i){
+                System.out.print(maze_matrix[j][i]);}
+            System.out.print("\n");
+        }
+
+
         // Initialize distances array with infinity
         int[][] distances = new int[maze_matrix.length][maze_matrix[0].length];
         for (int[] row : distances) {
