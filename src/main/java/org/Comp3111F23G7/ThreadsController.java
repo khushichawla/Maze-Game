@@ -15,7 +15,7 @@ public class ThreadsController extends Thread {
     Tuple foodPosition;
 
     //Constructor of ControlleurThread
-    ThreadsController(Tuple positionDepart){
+    public ThreadsController(Tuple positionDepart){
         //Get all the threads
         Squares=Window.Grid;
 

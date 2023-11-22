@@ -24,6 +24,7 @@ public class mainProject {
 
 //         Create and show the GUI maze
         SwingUtilities.invokeLater(() -> MazeGUI.createAndShowMazeGUI(maze));
+//        MazeGUI mazeGUI = new MazeGUI(maze);
 
         Searcher s = new Searcher(maze);
         Vertex[] path = s.bfs(mazeGenerator.getPointStart(),mazeGenerator.getPointEnd());
@@ -45,7 +46,12 @@ public class mainProject {
             }
         }
 
+//        int[][] mazeSP = MazeGUI.loadMazeFromFile("maze_output.txt");
+//        SwingUtilities.invokeLater(() -> MazeGUI.createAndShowMazeGUI(mazeSP));
         int[][] mazeSP = MazeGUI.loadMazeFromFile("maze_output.txt");
+//        mazeGUI.updateMaze(mazeSP);
         SwingUtilities.invokeLater(() -> MazeGUI.createAndShowMazeGUI(mazeSP));
+
+
     }
 }
