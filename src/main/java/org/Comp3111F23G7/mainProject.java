@@ -36,6 +36,7 @@ public class mainProject {
             m.colorMazeWithPath(path);
             m.colorMazeWithMultiPath(altpaths, shortestpathlen);
             m.outputTextMaze();
+//            m.printPaths(altpaths);
         } catch (Exception e) {
             System.out.println(e);
         } finally {

@@ -74,7 +74,7 @@ public class MazeGUI {
         int rows = maze.length;
         int cols = maze[0].length;
 
-        JFrame frame = new JFrame("Maze GUI");
+        JFrame frame = new JFrame("Maze Game");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new GridLayout(rows, cols));
 
@@ -82,10 +82,12 @@ public class MazeGUI {
             for (int col = 0; col < cols; col++) {
                 JPanel panel = new JPanel();
                 if (maze[row][col] == 2) {
+                    panel.setBackground(Color.BLUE);
+                } else if (maze[row][col] == 7) {
                     panel.setBackground(Color.GREEN);
                 } else if (maze[row][col] == 3) {
                     panel.setBackground(Color.RED);
-                } else if (maze[row][col] == 1) {
+                } else if (maze[row][col] == 0) {
                     panel.setBackground(Color.WHITE);
                 } else if (maze[row][col] == 4) {
                     panel.setBackground(Color.BLACK);

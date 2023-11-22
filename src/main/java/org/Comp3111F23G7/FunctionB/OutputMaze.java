@@ -23,14 +23,14 @@ public class OutputMaze {
         for (int i = 0; i< maze_matrix.length; ++i) {
             for (int j = 0; j < maze_matrix.length; ++j) {
                 if (maze_matrix[j][i] == 0) {
-                    output_matrix[j][i] = 1;
+                    output_matrix[j][i] = 0;
                 } else
                     output_matrix[j][i] = 9;
             }
         }
         this.start = start;
         this.end = end;
-        output_matrix[start.getY()][start.getX()] = 2;
+        output_matrix[start.getY()][start.getX()] = 7; //xxx
         output_matrix[end.getY()][end.getX()] = 3;
         try {
             this.fileWriter = new FileWriter("src/main/java/org/Comp3111F23G7/FunctionB/paths.csv", true); // true for append mode
@@ -62,7 +62,7 @@ public class OutputMaze {
         }
         csvLine.append(";");
 
-        output_matrix[start.getY()][start.getX()] = 2;
+        output_matrix[start.getY()][start.getX()] = 7; //xxx
         output_matrix[end.getY()][end.getX()] = 3;
 
         try {
