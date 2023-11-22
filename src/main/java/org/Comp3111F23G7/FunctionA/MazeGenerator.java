@@ -180,7 +180,6 @@ public class MazeGenerator {
     }
 
 
-
     /**
      * saveMazeToFile function to save generated maze in text file
      * @param filename - string name of file to save maze in

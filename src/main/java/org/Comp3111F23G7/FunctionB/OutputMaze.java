@@ -1,3 +1,12 @@
+/**
+ * The {@code OutputMaze} class is responsible for visualizing and outputting maze data.
+ * It creates a visual representation of paths within a maze and writes it to a file.
+ * The class also supports coloring paths differently based on whether they are the shortest path or not.
+ * It handles file operations for both text and CSV format outputs.
+ *
+ * @author Virginia Tsang
+ * @version 1.0
+ */
 package org.Comp3111F23G7.FunctionB;
 
 import org.Comp3111F23G7.Vertex;
@@ -13,11 +22,19 @@ public class OutputMaze {
     private int sp_cnt;
     private int op_cnt;
     private int shortestpathlen;
-
     private Vertex start;
     private Vertex end;
 
-
+    /**
+     * Constructs a new {@code OutputMaze} with the specified parameters.
+     * Initializes the output matrix and sets up the file writer.
+     *
+     * @param maze_matrix The 2D integer array representing the maze.
+     * @param shortestpathlen The length of the shortest path.
+     * @param start The starting vertex of the maze.
+     * @param end The ending vertex of the maze.
+     * @throws IOException If an I/O error occurs.
+     */
     public OutputMaze (int[][] maze_matrix, int shortestpathlen, Vertex start, Vertex end) throws IOException {
         this.output_matrix = new int[30][30];
         for (int i = 0; i< maze_matrix.length; ++i) {
@@ -41,7 +58,13 @@ public class OutputMaze {
         this.op_cnt=0;
         this.shortestpathlen = shortestpathlen;
         }
-
+    /**
+     * Colors the maze with the provided path.
+     * Paths are colored differently based on whether they are the shortest path or not.
+     * Also writes the path information to a CSV file.
+     *
+     * @param path An array of {@code Vertex} objects representing a path in the maze.
+     */
     public void colorMazeWithPath(Vertex[] path) {
         boolean is_sp = path.length == shortestpathlen;
         int color = is_sp ? 2 : 5;
@@ -71,7 +94,10 @@ public class OutputMaze {
             e.printStackTrace();
         }
     }
-
+    /**
+     * Closes the file writer.
+     * Should be called after all write operations are completed.
+     */
     public void closeFileWriter() {
         try {
             if (fileWriter != null) {
@@ -81,7 +107,12 @@ public class OutputMaze {
             e.printStackTrace();
         }
     }
-
+    /**
+     * Colors the maze with multiple paths and distinguishes between shortest and other paths.
+     *
+     * @param altpaths A list of vertex arrays, each representing a path in the maze.
+     * @param shortestpathlen The length of the shortest path for comparison.
+     */
     public void colorMazeWithMultiPath(List<Vertex[]> altpaths, int shortestpathlen){
         Iterator<Vertex[]> itr = altpaths.iterator();
         while (itr.hasNext()) {
@@ -97,7 +128,12 @@ public class OutputMaze {
             this.colorMazeWithPath(p);
         }
     }
-
+    /**
+     * Outputs the visual representation of the maze to a text file.
+     * The method writes a bordered maze with designated symbols for paths, walls, start, and end points.
+     *
+     * @throws IOException If an I/O error occurs during writing.
+     */
     public void outputTextMaze() throws IOException {
         try (FileWriter writer = new FileWriter("maze_output.txt")) {
             writer.write("44444444444444444444444444444444\n");
@@ -113,17 +149,17 @@ public class OutputMaze {
         }
     }
 
-    public void printPath(Vertex[] path){
-        System.out.println("\nfound shortest path, its length: "+ path.length);
-        for(Vertex v :path){
-            System.out.print("[");
-            System.out.print(v.getX());
-            System.out.print(" ");
-            System.out.print(v.getY());
-            System.out.print("]");
-        }
-
-    }
+//    public void printPath(Vertex[] path){
+//        System.out.println("\nfound shortest path, its length: "+ path.length);
+//        for(Vertex v :path){
+//            System.out.print("[");
+//            System.out.print(v.getX());
+//            System.out.print(" ");
+//            System.out.print(v.getY());
+//            System.out.print("]");
+//        }
+//
+//    }
 //    public void printPaths(List<Vertex[]> altpaths){
 //        System.out.println("\nfound other paths");
 //        for (Vertex[] i : altpaths) {
