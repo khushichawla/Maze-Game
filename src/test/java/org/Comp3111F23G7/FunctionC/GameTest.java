@@ -1,4 +1,4 @@
-package org.Comp3111F23G7;
+package org.Comp3111F23G7.FunctionC;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
