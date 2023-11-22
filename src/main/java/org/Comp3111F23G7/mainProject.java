@@ -32,7 +32,7 @@ public class mainProject {
         OutputMaze m = null;
         try {
             m = new OutputMaze(maze, shortestpathlen, mazeGenerator.getPointStart(),mazeGenerator.getPointEnd());
-            m.printPath(path);
+            //m.printPath(path);
             m.colorMazeWithPath(path);
             m.colorMazeWithMultiPath(altpaths, shortestpathlen);
             m.outputTextMaze();
