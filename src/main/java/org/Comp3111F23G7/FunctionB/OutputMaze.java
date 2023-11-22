@@ -23,9 +23,9 @@ public class OutputMaze {
         for (int i = 0; i< maze_matrix.length; ++i) {
             for (int j = 0; j < maze_matrix.length; ++j) {
                 if (maze_matrix[j][i] == 0) {
-                    output_matrix[j][i] = 9;
-                } else
                     output_matrix[j][i] = 1;
+                } else
+                    output_matrix[j][i] = 9;
             }
         }
         this.start = start;

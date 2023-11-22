@@ -11,18 +11,7 @@ public class Searcher {
     private int[][] maze_matrix;
 
     public Searcher(int[][] maze_matrix) {
-        this.maze_matrix = new int[30][30];
-        for(int j=0;j< maze_matrix.length;++j){
-            for (int i=0; i<maze_matrix.length;++i){
-                if(maze_matrix[j][i] == 1 )
-                    this.maze_matrix[j][i] = 0;
-                else
-                    this.maze_matrix[j][i] = 1;
-            }
-            System.out.print("\n");
-        }
-
-        //this.maze_matrix = maze_matrix;
+        this.maze_matrix = maze_matrix;
 
     }
 
