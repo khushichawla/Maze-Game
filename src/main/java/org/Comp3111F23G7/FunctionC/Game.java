@@ -1,6 +1,7 @@
-package org.Comp3111F23G7;
+package org.Comp3111F23G7.FunctionC;
 
 import org.Comp3111F23G7.FunctionB.Searcher;
+import org.Comp3111F23G7.Vertex;
 
 import java.util.Scanner;
 
