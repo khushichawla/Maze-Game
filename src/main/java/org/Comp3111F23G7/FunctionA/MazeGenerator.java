@@ -29,13 +29,13 @@ public class MazeGenerator {
         maze = new char[rows][cols];
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                maze[i][j] = '0';
+                maze[i][j] = '1'; //xxx
             }
         }
 
         // Select random point on the left border and open as the start node
         start = new Point((int) (Math.random() * rows), 0, null);
-        maze[start.r][start.c] = '2';
+        maze[start.r][start.c] = '7';
 
         // Select random point on the right border and open as the end node
         end = new Point((int) (Math.random() * rows), cols - 1, null);
@@ -60,7 +60,7 @@ public class MazeGenerator {
                 if ((x == 0 && y == 0) || (x != 0 && y != 0)) {
                     continue;
                 }
-                if (maze[start.r + x][start.c + y + 1] == '1') {
+                if (maze[start.r + x][start.c + y + 1] == '0') {//xxx
                     continue;
                 }
 //                try {
@@ -82,11 +82,11 @@ public class MazeGenerator {
             Point opposite = current.opposite();
             try {
                 // If both node and its opposite are walls
-                if (maze[current.r][current.c] == '0') {
-                    if (maze[opposite.r][opposite.c] == '0') {
+                if (maze[current.r][current.c] == '1') {//xxx
+                    if (maze[opposite.r][opposite.c] == '1') {//xxx
                         // Open path between the nodes
-                        maze[current.r][current.c] = '1';
-                        maze[opposite.r][opposite.c] = '1';
+                        maze[current.r][current.c] = '0';//xxx
+                        maze[opposite.r][opposite.c] = '0';//xxx
                         // Store the last node in order to mark it later
                         last = opposite;
                         // Iterate through direct neighbors of the node
@@ -96,7 +96,7 @@ public class MazeGenerator {
                                     continue;
                                 }
                                 try {
-                                    if (maze[opposite.r + x][opposite.c + y] == '1') {
+                                    if (maze[opposite.r + x][opposite.c + y] == '0') {//xxx
                                         continue;
                                     }
                                 } catch (Exception e) {
@@ -113,7 +113,7 @@ public class MazeGenerator {
 
             // If the algorithm has resolved, mark the end node
             if (frontier.isEmpty()) {
-                maze[last.r][last.c] = '1';
+                maze[last.r][last.c] = '0';//xxx
                 last.isExit = true;
             }
         }
@@ -139,7 +139,7 @@ public class MazeGenerator {
      */
     private void dfs(char[][] maze, int row, int col, boolean[][] visited, int pathsAdded) {
         visited[row][col] = true;
-        maze[row][col] = '1';
+        maze[row][col] = '0'; //xxx
 
         // Perform DFS on the unvisited neighbors
         int[] dx = {-1, 0, 1, 0};
@@ -147,12 +147,12 @@ public class MazeGenerator {
         for (int i = 0; i < 4; i++) {
             int newRow = row + dx[i];
             int newCol = col + dy[i];
-            if (isValid(newRow, newCol) && !visited[newRow][newCol] && maze[newRow][newCol] != '1') {
+            if (isValid(newRow, newCol) && !visited[newRow][newCol] && maze[newRow][newCol] != '0') {//xxx
                 pathsAdded++;
                 if (pathsAdded <= 2) { // Limit the number of additional paths to 2
                     int wallRow = row + dx[i] / 2; // Calculate the row of the wall to open
                     int wallCol = col + dy[i] / 2; // Calculate the column of the wall to open
-                    maze[wallRow][wallCol] = '1'; // Open the wall
+                    maze[wallRow][wallCol] = '0'; // Open the wall //xxx
                     dfs(maze, newRow, newCol, visited, pathsAdded);
                 }
             }
@@ -199,10 +199,10 @@ public class MazeGenerator {
                             ind2 = j+1;
                         } else writer.write(maze[i][j]); // Walls for borders
                     } else {
-                        if (i == end.r && j+1 == end.c) writer.write('1');
-                        else if (i+1 == end.r && j == end.c) writer.write('1');
+                        if (i == end.r && j+1 == end.c) writer.write('0'); //xxx
+                        else if (i+1 == end.r && j == end.c) writer.write('0'); //xxx
                         else if (started && ind1 == i && ind2 == j) {
-                            writer.write('1');
+                            writer.write('0'); //xxx
                             started = false;
                         } else writer.write(maze[i][j]);
                     }
