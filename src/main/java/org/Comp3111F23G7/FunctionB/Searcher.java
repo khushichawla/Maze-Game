@@ -9,22 +9,16 @@ import java.util.Queue;
 
 public class Searcher {
     private int[][] maze_matrix;
-    private int[][] output_matrix;
 
     public Searcher(int[][] maze_matrix) {
         this.maze_matrix = maze_matrix;
-        this.output_matrix = new int[30][30];
-        for (int i = 0; i< maze_matrix.length; ++i){
-            for (int j = 0; j< maze_matrix.length; ++j) {
-                if (maze_matrix[j][i] == 0) {
-                    output_matrix[j][i] = 1;
-                } else
-                    output_matrix[j][i] = 4;
-            }
-        }
+
     }
 
     public Vertex[] bfs(Vertex start, Vertex end) {
+        this.maze_matrix[start.getY()][start.getX()] =0;
+        this.maze_matrix[end.getY()][end.getX()] =0;
+
         if (maze_matrix[start.getY()][start.getX()] == 1 || maze_matrix[end.getY()][end.getX()] == 1) {
             return new Vertex[0]; // Start or end is a wall
         }
@@ -77,6 +71,16 @@ public class Searcher {
     }
 
     public Vertex[] dijkstra(Vertex start, Vertex end) {
+        this.maze_matrix[start.getY()][start.getX()] =0;
+        this.maze_matrix[end.getY()][end.getX()] =0;
+
+        for(int j=0;j< maze_matrix.length;++j){
+            for (int i=0; i<maze_matrix.length;++i){
+                System.out.print(maze_matrix[j][i]);}
+            System.out.print("\n");
+        }
+
+
         // Initialize distances array with infinity
         int[][] distances = new int[maze_matrix.length][maze_matrix[0].length];
         for (int[] row : distances) {
@@ -138,96 +142,77 @@ public class Searcher {
         return path.toArray(new Vertex[0]);
     }
 
-        private class Path {
-            List<Vertex> vertices = new ArrayList<>();
-            Set<Vertex> visited = new HashSet<>();
+    private class Path {
+        List<Vertex> vertices = new ArrayList<>();
+        Set<Vertex> visited = new HashSet<>();
 
-            Path() {
-            }
-
-            Path(Path other) {
-                this.vertices = new ArrayList<>(other.vertices);
-                this.visited = new HashSet<>(other.visited);
-            }
-
-            void add(Vertex v) {
-                vertices.add(v);
-                visited.add(v);
-            }
-
-            boolean contains(Vertex v) {
-                return visited.contains(v);
-            }
-
-            Vertex[] toArray() {
-                return vertices.toArray(new Vertex[0]);
-            }
+        Path() {
         }
 
-        // Method to find multiple distinct paths
-        public List<Vertex[]> findDistinctPaths(Vertex start, Vertex end, int numberOfPaths) {
-            List<Vertex[]> distinctPaths = new ArrayList<>();
-            findPathsDFS(start, end, new Path(), distinctPaths, numberOfPaths);
-            return distinctPaths;
+        Path(Path other) {
+            this.vertices = new ArrayList<>(other.vertices);
+            this.visited = new HashSet<>(other.visited);
         }
 
-        private void findPathsDFS(Vertex current, Vertex end, Path currentPath, List<Vertex[]> paths, int numberOfPaths) {
-            // Add the current vertex to the path
-            currentPath.add(current);
+        void add(Vertex v) {
+            vertices.add(v);
+            visited.add(v);
+        }
 
-            if (current.equals(end)) {
-                // Found a path
-                paths.add(currentPath.toArray());
-                if (paths.size() == numberOfPaths) {
-                    // Found the required number of paths
-                    return;
-                }
-            } else {
-                // Explore neighbors
-                for (int[] direction : new int[][]{{0, 1}, {1, 0}, {0, -1}, {-1, 0}}) { // Directions: down, right, up, left
-                    int newX = current.getX() + direction[0];
-                    int newY = current.getY() + direction[1];
-                    Vertex neighbor = new Vertex(newX, newY);
+        boolean contains(Vertex v) {
+            return visited.contains(v);
+        }
 
-                    if (isValidStep(neighbor) && !currentPath.contains(neighbor)) {
-                        // Continue the path with the neighbor
-                        findPathsDFS(neighbor, end, new Path(currentPath), paths, numberOfPaths);
-                        if (paths.size() == numberOfPaths) {
-                            // If the number of required paths has been found, stop searching
-                            return;
-                        }
+        Vertex[] toArray() {
+            return vertices.toArray(new Vertex[0]);
+        }
+    }
+
+    // Method to find multiple distinct paths
+    public List<Vertex[]> findDistinctPaths(Vertex start, Vertex end, int numberOfPaths) {
+        List<Vertex[]> distinctPaths = new ArrayList<>();
+        findPathsDFS(start, end, new Path(), distinctPaths, numberOfPaths);
+        return distinctPaths;
+    }
+
+    private void findPathsDFS(Vertex current, Vertex end, Path currentPath, List<Vertex[]> paths, int numberOfPaths) {
+        // Add the current vertex to the path
+        currentPath.add(current);
+
+        if (current.equals(end)) {
+            // Found a path
+            paths.add(currentPath.toArray());
+            if (paths.size() == numberOfPaths) {
+                // Found the required number of paths
+                return;
+            }
+        } else {
+            // Explore neighbors
+            for (int[] direction : new int[][]{{0, 1}, {1, 0}, {0, -1}, {-1, 0}}) { // Directions: down, right, up, left
+                int newX = current.getX() + direction[0];
+                int newY = current.getY() + direction[1];
+                Vertex neighbor = new Vertex(newX, newY);
+
+                if (isValidStep(neighbor) && !currentPath.contains(neighbor)) {
+                    // Continue the path with the neighbor
+                    findPathsDFS(neighbor, end, new Path(currentPath), paths, numberOfPaths);
+                    if (paths.size() == numberOfPaths) {
+                        // If the number of required paths has been found, stop searching
+                        return;
                     }
                 }
             }
-            // Remove the current vertex from the path when backtracking
-            currentPath.vertices.remove(currentPath.vertices.size() - 1);
-            currentPath.visited.remove(current);
         }
-
-        // Check if the step is within bounds and not a wall
-        private boolean isValidStep(Vertex v) {
-            return v.getX() >= 0 && v.getX() < maze_matrix[0].length && v.getY() >= 0 && v.getY() < maze_matrix.length && maze_matrix[v.getY()][v.getX()] == 0;
-        }
-
-
-    public void colorMazeWithPath(Vertex[] path, int color){
-        for (Vertex v: path){
-            int x_loc = v.getX();
-            int y_loc = v.getY();
-            output_matrix[y_loc][x_loc] = color;
-        }
+        // Remove the current vertex from the path when backtracking
+        currentPath.vertices.remove(currentPath.vertices.size() - 1);
+        currentPath.visited.remove(current);
     }
 
-    public void outputMaze() throws IOException {
-        try (FileWriter writer = new FileWriter("maze_output.txt")) {
-            for (int[] row : output_matrix) {
-                for (int cell : row) {
-                    writer.write(Integer.toString(cell));
-                }
-                writer.write("\n");
-            }
-        }
+    // Check if the step is within bounds and not a wall
+    private boolean isValidStep(Vertex v) {
+        return v.getX() >= 0 && v.getX() < maze_matrix[0].length && v.getY() >= 0 && v.getY() < maze_matrix.length && maze_matrix[v.getY()][v.getX()] == 0;
     }
+
 
     private class NodeState {
         Vertex vertex;
