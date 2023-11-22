@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="946f92b9-3f63-4400-863e-0e5cc43d347b" name="Changes" comment="Modified MazeGUI to update the same frame instead of creating a new frame everytime.">
-      <change afterPath="$PROJECT_DIR$/mazeTest6.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mazeTest7.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maze.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/maze_output.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/Comp3111F23G7/FunctionA/MazeGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/Comp3111F23G7/FunctionA/MazeGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/Comp3111F23G7/FunctionA/MazeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/Comp3111F23G7/FunctionA/MazeGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/Comp3111F23G7/mainProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/Comp3111F23G7/mainProject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/Comp3111F23G7/FunctionA/MazeGUITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/Comp3111F23G7/FunctionA/MazeGUITest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/Comp3111F23G7/FunctionA/MazeGeneratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/Comp3111F23G7/FunctionA/MazeGeneratorTest.java" afterDir="false" />
+    <list default="true" id="2bf68802-0096-4d27-8ee5-1c52e68606c7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,79 +17,27 @@
       <ProjectState />
     </projectState>
   </component>
-  <component name="ExternalProjectsManager">
-    <system id="GRADLE">
-      <state>
-        <task path="$PROJECT_DIR$">
-          <activation />
-        </task>
-        <projects_view>
-          <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Comp3111F23G7" type="f1a62948:ProjectNode" />
-              </path>
-            </expand>
-            <select />
-          </tree_state>
-        </projects_view>
-      </state>
-    </system>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
   </component>
-  <component name="Git.Pull.Settings">
-    <option name="OPTIONS">
-      <set>
-        <option value="REBASE" />
-      </set>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="pseudo_main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;VirginiaTsang&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="f645d51f-ab54-47f1-a8f1-d86430bafca9" />
-        <option name="url" value="https://github.com/khushichawla/Comp3111F23G7.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/org/Comp3111F23G7/mainProject.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/Comp3111F23G7/Game.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 7
+  &quot;associatedIndex&quot;: 8
 }</component>
-  <component name="ProjectId" id="2XkXJxBnpMEZt4pk5SIwBh3B1U8" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2Xsfy9Zihreik2T2TVYJYYrMeaT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -107,274 +46,20 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ToolWindowCover.ShowToolbar": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "virginia",
-    "settings.editor.selected.configurable": "proofread"
+    "android.gradle.sync.needed": "true",
+    "git-widget-placeholder": "main",
+    "last_directory_selection": "/Users/vedikasaini/IdeaProjects/Comp3111F23G7/src/main/java/org/Comp3111F23G7"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/test/java/org/Comp3111F23G7/FunctionA" />
-    </key>
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="org.Comp3111F23G7.FunctionA" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Gradle.MazeGUITest">
-    <configuration name="MainProgram" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.Comp3111F23G7.FunctionA.MainProgram" />
-      <module name="Comp3111F23G7.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.Comp3111F23G7.FunctionA.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MazeGUITest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;org.Comp3111F23G7.FunctionA.MazeGUITest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>true</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="MazeGeneratorTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;org.Comp3111F23G7.FunctionA.MazeGeneratorTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>true</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="MazeGeneratorTest.testGetPointEnd" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;org.Comp3111F23G7.FunctionA.MazeGeneratorTest.testGetPointEnd&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>true</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="MazeGeneratorTest.testSaveMazeToFile" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;org.Comp3111F23G7.FunctionA.MazeGeneratorTest.testSaveMazeToFile&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>true</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Gradle.MazeGUITest" />
-        <item itemvalue="Gradle.MazeGeneratorTest" />
-        <item itemvalue="Application.MainProgram" />
-        <item itemvalue="Gradle.MazeGeneratorTest.testGetPointEnd" />
-        <item itemvalue="Gradle.MazeGeneratorTest.testSaveMazeToFile" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="946f92b9-3f63-4400-863e-0e5cc43d347b" name="Changes" comment="" />
-      <created>1699173983692</created>
+      <changelist id="2bf68802-0096-4d27-8ee5-1c52e68606c7" name="Changes" comment="" />
+      <created>1699422959442</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1699173983692</updated>
+      <updated>1699422959442</updated>
     </task>
-    <task id="LOCAL-00001" summary="add random">
-      <option name="closed" value="true" />
-      <created>1699174505869</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1699174505869</updated>
-    </task>
-    <task id="LOCAL-00002" summary="add random 1">
-      <option name="closed" value="true" />
-      <created>1699174549670</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1699174549670</updated>
-    </task>
-    <task id="LOCAL-00003" summary="BFS with requirements test case">
-      <option name="closed" value="true" />
-      <created>1699548018697</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1699548018697</updated>
-    </task>
-    <task id="LOCAL-00004" summary="dijkstra with requirements test case">
-      <option name="closed" value="true" />
-      <created>1699550036124</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1699550036124</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Find more than 3 but less than 6 paths using DFS">
-      <option name="closed" value="true" />
-      <created>1699589395589</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1699589395589</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Writing Junit5 test case">
-      <option name="closed" value="true" />
-      <created>1699594396543</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1699594396543</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Updating Function A - MazeGenerator.java procedure and some functionality of MazeGUI.java">
-      <created>1700474513777</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1700474513777</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Adding JUnit test cases for Function A">
-      <created>1700474563560</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1700474563560</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Changed shortest path colour. Updated walls = 1 and clear = 0 in Function A.">
-      <created>1700665674468</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1700665674468</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Modified MazeGUI to update the same frame instead of creating a new frame everytime.">
-      <created>1700674609478</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1700674609478</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="add random" />
-    <MESSAGE value="add random 1" />
-    <MESSAGE value="BFS with requirements test case" />
-    <MESSAGE value="dijkstra with requirements test case" />
-    <MESSAGE value="Find more than 3 but less than 6 paths using DFS" />
-    <MESSAGE value="Writing Junit5 test case" />
-    <MESSAGE value="Updating Function A - MazeGenerator.java procedure and some functionality of MazeGUI.java" />
-    <MESSAGE value="Adding JUnit test cases for Function A" />
-    <MESSAGE value="Changed shortest path colour. Updated walls = 1 and clear = 0 in Function A." />
-    <MESSAGE value="Modified MazeGUI to update the same frame instead of creating a new frame everytime." />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified MazeGUI to update the same frame instead of creating a new frame everytime." />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Comp3111F23G7$MazeGUITest_loadMazeFromFile_ValidFilePath_ReturnsMazeArray.ic" NAME="MazeGUITest.loadMazeFromFile_ValidFilePath_ReturnsMazeArray Coverage Results" MODIFIED="1700412470536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Comp3111F23G7$MazeGeneratorTest_testSaveMazeToFile.ic" NAME="MazeGeneratorTest.testSaveMazeToFile Coverage Results" MODIFIED="1700412032456" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Comp3111F23G7$MazeGUITest_createAndShowMazeGUI_InvalidMaze_DoesNotCreateAndDisplayGUI.ic" NAME="MazeGUITest.createAndShowMazeGUI_InvalidMaze_DoesNotCreateAndDisplayGUI Coverage Results" MODIFIED="1700413533637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Comp3111F23G7$Tests_in__org_Comp3111F23G7_.ic" NAME="Tests in 'org.Comp3111F23G7' Coverage Results" MODIFIED="1700237923402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Comp3111F23G7$MazeGUITest_testLoadMazeFromFileIOException.ic" NAME="MazeGUITest.testLoadMazeFromFileIOException Coverage Results" MODIFIED="1700387497264" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Comp3111F23G7$MazeGeneratorTest_testGenerateMaze.ic" NAME="MazeGeneratorTest.testGenerateMaze Coverage Results" MODIFIED="1700411905310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Comp3111F23G7$MazeGUITest_testCreateAndShowMazeGUI.ic" NAME="MazeGUITest.testCreateAndShowMazeGUI Coverage Results" MODIFIED="1700412480398" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Comp3111F23G7$MazeGUITest_createAndShowMazeGUI_MazeWithInvalidColor_PanelsHaveDefaultBackgroundColor.ic" NAME="MazeGUITest.createAndShowMazeGUI_MazeWithInvalidColor_PanelsHaveDefaultBackgroundColor Coverage Results" MODIFIED="1700415059361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Comp3111F23G7$MazeGUITest_testLoadMazeFromFile.ic" NAME="MazeGUITest.testLoadMazeFromFile Coverage Results" MODIFIED="1700387280256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Comp3111F23G7$MazeGeneratorTest_testSaveMazeToFileIOException.ic" NAME="MazeGeneratorTest.testSaveMazeToFileIOException Coverage Results" MODIFIED="1700386653359" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Comp3111F23G7$MazeGUITest.ic" NAME="MazeGUITest Coverage Results" MODIFIED="1700756806565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Comp3111F23G7$MazeGeneratorTest.ic" NAME="MazeGeneratorTest Coverage Results" MODIFIED="1700756034558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
