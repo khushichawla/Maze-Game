@@ -37,7 +37,6 @@ public class Game {
                 {1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1},
                 {1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1},
                 {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}};
-
         int[] jerry = {12, 0};
         int[] oldJerry={-1,-1};
         int[] tom = {1,29};
@@ -80,11 +79,14 @@ public class Game {
         }
     }
 
-    private static void playGame(int[][] maze, int[] jerry, int[] tom) {
+    public static void playGame(int[][] maze, int[] jerry, int[] tom) {
+        int[] exit= {tom[0], tom[1]};
         Scanner scanner = new Scanner(System.in);
         Searcher s =  new Searcher(maze);
         int countV=0;
-        Vertex[] path = s.dijkstra(new Vertex(28,1), new Vertex(0,12));
+        int rev=0;
+        Vertex[] path = s.dijkstra(new Vertex(tom[1],tom[0]), new Vertex(jerry[1],jerry[0]));
+        int size = path.length-1;
 
         int[] oldJerry = new int[2];
         int[] oldTom = new int[2];
@@ -106,7 +108,19 @@ public class Game {
                 for(int i=0; i<2; i++){
                     int y = path[countV].getX();
                     int x = path[countV].getY();
-                    countV++;
+                    if(countV<size && rev==0){
+                        countV++;
+                    }
+                    if(countV == size){
+                        rev=1;
+                    }
+                    if((countV<size && rev==1) || y==0) {
+                        if (countV - 1 > 0) {
+                            countV--;
+                        } else {
+                            countV++;
+                        }
+                    }
                     oldTom[0] = tom[0];
                     oldTom[1] = tom[1];
                     tom[0] = x;
@@ -121,7 +135,7 @@ public class Game {
             }
 
             printMaze(maze);
-            if(jerry[0]==1 && jerry[1]==29){
+            if(jerry[0]==exit[0] && jerry[1]==exit[1]){
                 System.out.println("You won! :)");
                 break;
             }
@@ -132,7 +146,7 @@ public class Game {
         }
     }
 
-    private static int[] calculateNextMove(int[] currentPos, String input) {
+    public static int[] calculateNextMove(int[] currentPos, String input) {
         int[] nextMove = new int[2];
         // Determine the next move based on the player's input
         switch (input.toLowerCase()) {
@@ -164,8 +178,8 @@ public class Game {
         return nextMove;
     }
 
-    private static boolean isValidMove(int[] move, int[][] maze) {
-        if(move[0]==30 || move[1]==30){
+    public static boolean isValidMove(int[] move, int[][] maze) {
+        if(move[0]==32 || move[1]==32){
             return false;
         }
         int row = move[0];
