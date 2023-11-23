@@ -11,6 +11,7 @@ package org.Comp3111F23G7.FunctionB;
 
 import org.Comp3111F23G7.Vertex;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Iterator;
@@ -47,8 +48,12 @@ public class OutputMaze {
         }
         this.start = start;
         this.end = end;
-        output_matrix[start.getY()][start.getX()] = 7; //xxx
+        output_matrix[start.getY()][start.getX()] = 7;
         output_matrix[end.getY()][end.getX()] = 3;
+        File file = new File("src/main/java/org/Comp3111F23G7/FunctionB/paths.csv");
+        if (file.exists()) {
+            file.delete();
+        }
         try {
             this.fileWriter = new FileWriter("src/main/java/org/Comp3111F23G7/FunctionB/paths.csv", true); // true for append mode
         } catch (IOException e) {
