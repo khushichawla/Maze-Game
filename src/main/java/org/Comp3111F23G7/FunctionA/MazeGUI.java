@@ -1,15 +1,10 @@
 package org.Comp3111F23G7.FunctionA;
 
-import org.Comp3111F23G7.KeyboardListener;
-import org.Comp3111F23G7.ThreadsController;
-import org.Comp3111F23G7.Vertex;
-
 import javax.swing.*;
 import java.awt.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 
 /**
  * MazeGUI class
@@ -20,10 +15,6 @@ public class MazeGUI {
     private static JPanel[][] mazePanels;
     private static int[][] playerLocations;
     private static int[][] maze;
-
-    public MazeGUI(int[][] maze) {
-        this.maze = maze;
-    }
 
     /**
      * Main function
@@ -82,7 +73,6 @@ public class MazeGUI {
         int rows = maze.length;
         int cols = maze[0].length;
 
-//        JFrame frame = new JFrame("Maze Game");
         frame.getContentPane().removeAll();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new GridLayout(rows, cols));

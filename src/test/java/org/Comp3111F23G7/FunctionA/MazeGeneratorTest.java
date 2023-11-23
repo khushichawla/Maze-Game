@@ -1,9 +1,8 @@
 package org.Comp3111F23G7.FunctionA;
 
+import org.Comp3111F23G7.Vertex;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -57,5 +56,28 @@ public class MazeGeneratorTest {
             e.printStackTrace();
         }
         return null;
+    }
+
+    @Test
+    public void testGetPointStart() {
+        MazeGenerator mazeGenerator = new MazeGenerator(30, 30);
+        mazeGenerator.generateMaze();
+        // Call the getPointStart() function
+        Vertex pointStart = mazeGenerator.getPointStart();
+
+        // Verify that the x and y coordinates are within the maze boundaries
+        Assertions.assertTrue(pointStart.getX() >= 0 && pointStart.getX() < 30);
+        Assertions.assertTrue(pointStart.getY() >= 0 && pointStart.getY() < 30);
+    }
+    @Test
+    public void testGetPointEnd() {
+        MazeGenerator mazeGenerator = new MazeGenerator(30, 30);
+        mazeGenerator.generateMaze();
+        // Call the getPointEnd() function
+        Vertex pointEnd = mazeGenerator.getPointEnd();
+
+        // Verify that the x and y coordinates are within the maze boundaries
+        Assertions.assertTrue(pointEnd.getX() >= 0 && pointEnd.getX() <= 30);
+        Assertions.assertTrue(pointEnd.getY() >= 0 && pointEnd.getY() <= 30);
     }
 }

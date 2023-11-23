@@ -1,6 +1,5 @@
 package org.Comp3111F23G7.FunctionA;
 import org.Comp3111F23G7.Vertex;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,14 +14,6 @@ public class MazeGenerator {
     private Point start;
     private Point end;
 
-    public Vertex getPointStart(){
-        return new Vertex(start.c, start.r);
-    }
-
-    public Vertex getPointEnd(){
-        return new Vertex(end.c, end.r);
-    }
-
     /**
      * Constructor 1
      * @param rows - int number of rows
@@ -34,7 +25,24 @@ public class MazeGenerator {
         maze = new char[rows][cols];
     }
 
+    public Vertex getPointStart(){
+        return new Vertex(start.c, start.r);
+    }
+
+    public Vertex getPointEnd(){
+        return new Vertex(end.c, end.r);
+    }
+
     public void generateMaze() {
+        // Generate the maze using Prim's algorithm
+        generateMazeUsingPrimsAlgorithm();
+        // Add additional paths using DFS
+        addAdditionalPathsUsingDFS();
+    }
+    /**
+     * generateMazeUsingPrimsAlgorithm function to generate maze using Prim's algorithm
+     */
+    void generateMazeUsingPrimsAlgorithm() {
         // Build maze and initialize with only walls
         maze = new char[rows][cols];
         for (int i = 0; i < rows; i++) {
@@ -52,17 +60,6 @@ public class MazeGenerator {
         maze[end.r][end.c] = '3';
         end.isExit = true;
 
-        // Generate the maze using Prim's algorithm
-        generateMazeUsingPrimsAlgorithm();
-
-        // Add additional paths using DFS
-        addAdditionalPathsUsingDFS();
-    }
-
-    /**
-     * generateMazeUsingPrimsAlgorithm function to generate maze using Prim's algorithm
-     */
-    private void generateMazeUsingPrimsAlgorithm() {
         // Iterate through direct neighbors of the start node
         ArrayList<Point> frontier = new ArrayList<>();
         for (int x = -1; x <= 1; x++) {
@@ -70,16 +67,13 @@ public class MazeGenerator {
                 if ((x == 0 && y == 0) || (x != 0 && y != 0)) {
                     continue;
                 }
-                if (maze[start.r + x][start.c + y + 1] == '0') {//xxx
+                try {
+                    if (maze[start.r + x][start.c + y + 1] == '0') { //xxx
+                        continue;
+                    }
+                } catch (Exception e) { // should I remove this?
                     continue;
                 }
-//                try {
-//                    if (maze[start.r + x][start.c + y + 1] == '1') {
-//                        continue;
-//                    }
-//                } catch (Exception e) {
-//                    continue;
-//                }
                 // Add eligible points to the frontier
                 frontier.add(new Point(start.r + x, start.c + y + 1, start));
             }
@@ -92,11 +86,11 @@ public class MazeGenerator {
             Point opposite = current.opposite();
             try {
                 // If both node and its opposite are walls
-                if (maze[current.r][current.c] == '1') {//xxx
-                    if (maze[opposite.r][opposite.c] == '1') {//xxx
+                if (maze[current.r][current.c] == '1') { //xxx
+                    if (maze[opposite.r][opposite.c] == '1') { //xxx
                         // Open path between the nodes
-                        maze[current.r][current.c] = '0';//xxx
-                        maze[opposite.r][opposite.c] = '0';//xxx
+                        maze[current.r][current.c] = '0'; //xxx
+                        maze[opposite.r][opposite.c] = '0'; //xxx
                         // Store the last node in order to mark it later
                         last = opposite;
                         // Iterate through direct neighbors of the node
@@ -106,7 +100,7 @@ public class MazeGenerator {
                                     continue;
                                 }
                                 try {
-                                    if (maze[opposite.r + x][opposite.c + y] == '0') {//xxx
+                                    if (maze[opposite.r + x][opposite.c + y] == '0') { //xxx
                                         continue;
                                     }
                                 } catch (Exception e) {
@@ -123,7 +117,7 @@ public class MazeGenerator {
 
             // If the algorithm has resolved, mark the end node
             if (frontier.isEmpty()) {
-                maze[last.r][last.c] = '0';//xxx
+                maze[last.r][last.c] = '0'; //xxx
                 last.isExit = true;
             }
         }
@@ -133,9 +127,8 @@ public class MazeGenerator {
      * addAdditionalPathsUsingDFS function to add additional paths using DFS
      */
     private void addAdditionalPathsUsingDFS() {
-        // Perform DFS to add additional paths
         boolean[][] visited = new boolean[rows][cols];
-        int pathsAdded = 0; // Counter for paths added
+        int pathsAdded = 0; // Counter
         dfs(maze, start.r, start.c, visited, pathsAdded);
     }
 
@@ -151,7 +144,6 @@ public class MazeGenerator {
         visited[row][col] = true;
         maze[row][col] = '0'; //xxx
 
-        // Perform DFS on the unvisited neighbors
         int[] dx = {-1, 0, 1, 0};
         int[] dy = {0, 1, 0, -1};
         for (int i = 0; i < 4; i++) {
@@ -191,18 +183,18 @@ public class MazeGenerator {
             boolean started = false;
 
             // adding top border to the maze
-//            for (int i = 0; i < 32; i++) {
-//                writer.write('4');
-//            }
+            for (int i = 0; i < 32; i++) {
+                writer.write('4');
+            }
 
-//            writer.write("\n");
+            writer.write("\n");
             for (int i = 0; i < rows; i++) {
-//                if (i == start.r) writer.write('2');
-//                else writer.write('4');
+                if (i == start.r) writer.write('7');
+                else writer.write('4');
                 for (int j = 0; j < cols; j++) {
                     if (i == 0 || i == rows - 1 || j == 0 || j == cols - 1) {
                         if (i == start.r && j == start.c) {
-                            writer.write('2'); // Entry point
+                            writer.write('7'); // Entry point
                             started = true;
                             ind1 = i;
                             ind2 = j+1;
@@ -216,15 +208,15 @@ public class MazeGenerator {
                         } else writer.write(maze[i][j]);
                     }
                 }
-//                if (i == end.r) writer.write('3');
-//                else writer.write('4');
+                if (i == end.r) writer.write('3');
+                else writer.write('4');
                 writer.write("\n");
             }
 
             // adding bottom border to the maze
-//            for (int i = 0; i < 32; i++) {
-//                writer.write('4');
-//            }
+            for (int i = 0; i < 32; i++) {
+                writer.write('4');
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
