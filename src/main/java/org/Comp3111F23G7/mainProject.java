@@ -33,7 +33,6 @@ public class mainProject {
         OutputMaze m = null;
         try {
             m = new OutputMaze(maze, shortestpathlen, mazeGenerator.getPointStart(),mazeGenerator.getPointEnd());
-            //m.printPath(path);
             m.colorMazeWithPath(path);
             m.colorMazeWithMultiPath(altpaths, shortestpathlen);
             m.outputTextMaze();
@@ -49,7 +48,6 @@ public class mainProject {
 //        int[][] mazeSP = MazeGUI.loadMazeFromFile("maze_output.txt");
 //        SwingUtilities.invokeLater(() -> MazeGUI.createAndShowMazeGUI(mazeSP));
         int[][] mazeSP = MazeGUI.loadMazeFromFile("maze_output.txt");
-//        mazeGUI.updateMaze(mazeSP);
         SwingUtilities.invokeLater(() -> MazeGUI.createAndShowMazeGUI(mazeSP));
 
 

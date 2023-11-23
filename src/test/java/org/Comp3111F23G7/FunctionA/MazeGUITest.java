@@ -1,10 +1,8 @@
 package org.Comp3111F23G7.FunctionA;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import javax.swing.*;
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.awt.*;
@@ -29,19 +27,15 @@ public class MazeGUITest {
             Path tempFilePath = Files.createTempFile("temp_maze", ".txt");
             Files.writeString(tempFilePath, mazeData, StandardOpenOption.WRITE);
 
-            // Load the maze from the temporary file
             int[][] actualMaze = MazeGUI.loadMazeFromFile(tempFilePath.toString());
 
-            // Assert that the maze is not null
             assertNotNull(actualMaze);
 
-            // Assert that the maze has valid dimensions
             int rows = actualMaze.length;
             assertTrue(rows > 0);
             int cols = actualMaze[0].length;
             assertTrue(cols > 0);
 
-            // Clean up the temporary file
             Files.deleteIfExists(tempFilePath);
         } catch (IOException e) {
             fail("Exception occurred: " + e.getMessage());
@@ -49,8 +43,7 @@ public class MazeGUITest {
     }
 
     @Test
-    void createAndShowMazeGUI_MazeWithGreenColor_PanelsHaveDefaultBackgroundColor() {
-        // Specify the path to the text file containing the maze
+    void createAndShowMazeGUI_MazeWithBlueColor_PanelsHaveDefaultBackgroundColor() {
         String mazeFilePath = "mazeTest3.txt";
 
         int[][] maze = loadMazeFromFile(mazeFilePath);
@@ -64,20 +57,18 @@ public class MazeGUITest {
             e.printStackTrace();
         }
 
-        // Get the JFrame from the maze GUI
         JFrame frame = getMainFrame();
 
-        // Assert that all panels have the color GREEN
+        // Assert that all panels have the color BLUE
         Component[] components = frame.getContentPane().getComponents();
         for (Component component : components) {
             if (component instanceof JPanel) {
-                assertEquals(Color.GREEN, ((JPanel) component).getBackground());
+                assertEquals(Color.BLUE, ((JPanel) component).getBackground());
             }
         }
     }
     @Test
     void createAndShowMazeGUI_MazeWithInvalidColor_PanelsHaveDefaultBackgroundColor() {
-        // Specify the path to the text file containing the maze
         String mazeFilePath = "mazeTest1.txt";
 
         int[][] maze = loadMazeFromFile(mazeFilePath);
@@ -105,7 +96,6 @@ public class MazeGUITest {
 
     @Test
     void createAndShowMazeGUI_MazeWithWhiteColor_PanelsHaveDefaultBackgroundColor() {
-        // Specify the path to the text file containing the maze
         String mazeFilePath = "mazeTest2.txt";
 
         int[][] maze = loadMazeFromFile(mazeFilePath);
@@ -126,14 +116,13 @@ public class MazeGUITest {
         Component[] components = frame.getContentPane().getComponents();
         for (Component component : components) {
             if (component instanceof JPanel) {
-                assertNotEquals(Color.GRAY, ((JPanel) component).getBackground());
+                assertEquals(Color.GRAY, ((JPanel) component).getBackground());
             }
         }
     }
 
     @Test
     void createAndShowMazeGUI_MazeWithRedColor_PanelsHaveDefaultBackgroundColor() {
-        // Specify the path to the text file containing the maze
         String mazeFilePath = "mazeTest4.txt";
 
         int[][] maze = loadMazeFromFile(mazeFilePath);
@@ -154,14 +143,33 @@ public class MazeGUITest {
         Component[] components = frame.getContentPane().getComponents();
         for (Component component : components) {
             if (component instanceof JPanel) {
-                assertNotEquals(Color.BLACK, ((JPanel) component).getBackground());
+                assertEquals(Color.RED, ((JPanel) component).getBackground());
+            }
+        }
+
+        String mazeWHITE = "mazeTest7.txt";
+        int[][] maze3 = loadMazeFromFile(mazeWHITE);
+        MazeGUI.createAndShowMazeGUI(maze3);
+        // Delay to allow the GUI to be fully rendered
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        JFrame frame3 = getMainFrame();
+
+        // Assert that all panels do not have WHITE color as it should be all WHITE
+        Component[] components3 = frame.getContentPane().getComponents();
+        for (Component component : components3) {
+            if (component instanceof JPanel) {
+                assertEquals(Color.WHITE, ((JPanel) component).getBackground());
             }
         }
     }
 
     @Test
     void createAndShowMazeGUI_MazeWithBlackColor_PanelsHaveDefaultBackgroundColor() {
-        // Specify the path to the text file containing the maze
         String mazeFilePath = "mazeTest5.txt";
 
         int[][] maze = loadMazeFromFile(mazeFilePath);
@@ -175,12 +183,32 @@ public class MazeGUITest {
             e.printStackTrace();
         }
 
-        // Get the JFrame from the maze GUI
         JFrame frame = getMainFrame();
 
         // Assert that all panels do not have WHITE color as it should be all BLACK
         Component[] components = frame.getContentPane().getComponents();
         for (Component component : components) {
+            if (component instanceof JPanel) {
+                assertNotEquals(Color.WHITE, ((JPanel) component).getBackground());
+            }
+        }
+
+        String mazeYellow = "mazeTest6.txt";
+        int[][] maze2 = loadMazeFromFile(mazeYellow);
+        MazeGUI.createAndShowMazeGUI(maze2);
+
+        // Delay to allow the GUI to be fully rendered
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        JFrame frame2 = getMainFrame();
+
+        // Assert that all panels do not have WHITE color as it should be all YELLOW
+        Component[] components2 = frame.getContentPane().getComponents();
+        for (Component component : components2) {
             if (component instanceof JPanel) {
                 assertNotEquals(Color.WHITE, ((JPanel) component).getBackground());
             }
@@ -225,16 +253,13 @@ public class MazeGUITest {
         throw new IllegalStateException("Main frame not found");
     }
 
-//    @Test
-//    void main_ValidMazeFile_CreatesAndShowsGUI() {
-//        // Specify the path to the valid maze text file
-//        String mazeFilePath = "mazeTest.txt";
-//
-//        // Invoke the main method
-//        MazeGUI mazeGUI = new MazeGUI();
-//        MazeGUI.main(new String[]{mazeFilePath});
-//
-//        // Assert that the GUI is visible
-//        assertTrue(mazeGUI.isGUIVisible());
-//    }
+    @Test
+    void main_ValidMazeFile_CreatesAndShowsGUI() {
+        String mazeFilePath = "mazeTest.txt";
+
+        MazeGUI mazeGUI = new MazeGUI();
+        MazeGUI.main(new String[]{mazeFilePath});
+
+        assertTrue(mazeGUI.isGUIVisible());
+    }
 }
