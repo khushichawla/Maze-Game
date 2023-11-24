@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * MazeGenerator Class to generate the maze in a text file
  */
 public class MazeGenerator {
-    private char[][] maze;
+    public char[][] maze;
     private int rows;
     private int cols;
     private Point start;
