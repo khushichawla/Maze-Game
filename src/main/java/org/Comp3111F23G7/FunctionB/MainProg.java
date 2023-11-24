@@ -44,7 +44,7 @@ public class MainProg {
             m = new OutputMaze(matrix, shortestpathlen,new Vertex(0, 12), new Vertex(29, 1));
             m.colorMazeWithPath(path);
             m.colorMazeWithMultiPath(altpaths, shortestpathlen);
-            m.outputTextMaze();
+            //m.outputTextMaze();
             //m.printPath(path);
             //m.printPaths(altpaths);
         } catch (Exception e) {

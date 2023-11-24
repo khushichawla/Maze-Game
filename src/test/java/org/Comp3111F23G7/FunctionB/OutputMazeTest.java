@@ -8,6 +8,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -99,6 +100,8 @@ class OutputMazeTest {
                 {1,0,0,0,0,0,0,1,0,1,0,0,0,0,1,1,1,0,1,0,1,0,0,0,1,0,0,0,0,1},
                 {1,1,1,1,1,1,0,1,0,0,0,0,1,0,0,0,0,0,1,1,0,0,1,1,1,1,0,0,1,1},
                 {1,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,0,0,1,1,1,1,0}};
+        File file = new File("src/main/java/org/Comp3111F23G7/FunctionB/paths.csv");
+        file.createNewFile();
         outputMaze = new OutputMaze(testMatrix, 49, new Vertex(0, 12), new Vertex(29, 1)); // Using the length of your shortest path
     }
 
@@ -106,6 +109,7 @@ class OutputMazeTest {
     void tearDown() throws IOException {
         outputMaze.closeFileWriter();
         Files.deleteIfExists(Paths.get(csvFilePath)); // Clean up the CSV file after each test
+        Files.deleteIfExists(Paths.get("maze_output.txt"));
     }
 
     @Test
@@ -131,13 +135,49 @@ class OutputMazeTest {
     }
 
     @Test
-    void testOutputTxt() throws IOException{
+    void testOutputTextMaze() throws IOException {
         outputMaze.outputTextMaze();
-
+        StringBuilder fileContent = new StringBuilder();
+        try (BufferedReader reader = new BufferedReader(new FileReader("maze_output.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                fileContent.append(line).append("\n");
+            }
+        }
+        String expected = "44444444444444444444444444444444\n" +
+                "49909999999099999909999999999994\n" +
+                "40990009009000900990090009000034\n" +
+                "40099009909990900099099099909994\n" +
+                "49909900900090999909909090909094\n" +
+                "40900900999090090000000090909094\n" +
+                "40900999009090090900990990009094\n" +
+                "49990009909099990999090000999094\n" +
+                "49099000999009000009099900900994\n" +
+                "49009990000099090909900009909904\n" +
+                "49000099909990000900999099099094\n" +
+                "49009000909000999990090000090094\n" +
+                "49999090999090000090099999099994\n" +
+                "47009990000099999099090000009004\n" +
+                "49900099909990900009000999909904\n" +
+                "40909000000090909999909900900994\n" +
+                "40909999090000999000009099999094\n" +
+                "49999000099990900099909090000094\n" +
+                "49009990900090009090999099099994\n" +
+                "49900099009090099000000009090904\n" +
+                "40990009909099990009999909090994\n" +
+                "49099990909000000099090009090094\n" +
+                "49000090909990999990090999090994\n" +
+                "49999990900099909099090900000904\n" +
+                "49000000099000909000090909999994\n" +
+                "49990999909900900999090900090094\n" +
+                "40090090900990000909090990090004\n" +
+                "49099990909900990909090099099994\n" +
+                "49000000909000099909090009000094\n" +
+                "49999990900009000009900999900994\n" +
+                "49000099999999999990999900999904\n" +
+                "44444444444444444444444444444444\n";
+        assertEquals(expected.trim(), fileContent.toString().trim());
     }
-
-
-
-
 }
+
 
