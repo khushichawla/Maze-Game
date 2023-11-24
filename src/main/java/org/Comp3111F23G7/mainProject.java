@@ -50,6 +50,5 @@ public class mainProject {
         int[][] mazeSP = MazeGUI.loadMazeFromFile("maze_output.txt");
         SwingUtilities.invokeLater(() -> MazeGUI.createAndShowMazeGUI(mazeSP));
 
-
     }
 }
