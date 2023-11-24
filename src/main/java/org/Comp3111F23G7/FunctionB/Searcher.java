@@ -1,23 +1,41 @@
+/**
+ * The {@code Searcher} class in the package {@code org.Comp3111F23G7.FunctionB}
+ * is designed to perform various search operations within a maze represented by a 2D integer array.
+ * It supports breadth-first search (BFS), Dijkstra's algorithm for shortest path finding,
+ * and a method to find multiple distinct paths between two vertices in the maze.
+ * The maze is represented as a 2D integer array where 0 indicates an open path and 1 indicates a wall.
+ *
+ * @author Virginia Tsang
+ * @version 1.0
+ */
+
 package org.Comp3111F23G7.FunctionB;
 import org.Comp3111F23G7.Vertex;
-
-import java.io.IOException;
 import java.util.*;
-import java.io.FileWriter;
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class Searcher {
     private int[][] maze_matrix;
-
+    /**
+     * Constructs a new {@code Searcher} with the specified maze.
+     *
+     * @param maze_matrix The 2D integer array representing the maze.
+     */
     public Searcher(int[][] maze_matrix) {
         this.maze_matrix = maze_matrix;
-    }
 
+    }
+    /**
+     * Performs a breadth-first search (BFS) from the start vertex to the end vertex in the maze.
+     *
+     * @param start The starting vertex for the BFS.
+     * @param end The end vertex for the BFS.
+     * @return An array of {@code Vertex} objects representing the path from start to end, or an empty array if no path is found.
+     */
     public Vertex[] bfs(Vertex start, Vertex end) {
-        if (maze_matrix[start.getY()][start.getX()] == 1 || maze_matrix[end.getY()][end.getX()] == 1) {
-            return new Vertex[0]; // Start or end is a wall
-        }
+        this.maze_matrix[start.getY()][start.getX()] =0;
+        this.maze_matrix[end.getY()][end.getX()] =0;
 
         boolean[][] visited = new boolean[maze_matrix.length][maze_matrix[0].length];
         Queue<NodeState> queue = new LinkedList<>();
@@ -65,8 +83,24 @@ public class Searcher {
 
         return path.toArray(new Vertex[0]);
     }
-
+    /**
+     * Performs Dijkstra's algorithm to find the shortest path from the start vertex to the end vertex in the maze.
+     *
+     * @param start The starting vertex.
+     * @param end The end vertex.
+     * @return An array of {@code Vertex} objects representing the shortest path from start to end, or an empty array if no path is found.
+     */
     public Vertex[] dijkstra(Vertex start, Vertex end) {
+        this.maze_matrix[start.getY()][start.getX()] =0;
+        this.maze_matrix[end.getY()][end.getX()] =0;
+
+        for(int j=0;j< maze_matrix.length;++j){
+            for (int i=0; i<maze_matrix.length;++i){
+                System.out.print(maze_matrix[j][i]);}
+            System.out.print("\n");
+        }
+
+
         // Initialize distances array with infinity
         int[][] distances = new int[maze_matrix.length][maze_matrix[0].length];
         for (int[] row : distances) {
@@ -154,7 +188,14 @@ public class Searcher {
         }
     }
 
-    // Method to find multiple distinct paths
+    /**
+     * Finds a specified number of distinct paths from the start vertex to the end vertex in the maze using depth-first search (DFS).
+     *
+     * @param start The starting vertex.
+     * @param end The end vertex.
+     * @param numberOfPaths The number of distinct paths to find.
+     * @return A list of {@code Vertex[]} where each array represents a distinct path from start to end.
+     */
     public List<Vertex[]> findDistinctPaths(Vertex start, Vertex end, int numberOfPaths) {
         List<Vertex[]> distinctPaths = new ArrayList<>();
         findPathsDFS(start, end, new Path(), distinctPaths, numberOfPaths);
@@ -194,11 +235,15 @@ public class Searcher {
         currentPath.visited.remove(current);
     }
 
-    // Check if the step is within bounds and not a wall
+    /**
+     * A private helper method to check if a given vertex represents a valid step in the maze.
+     *
+     * @param v The vertex to check.
+     * @return {@code true} if the vertex is within bounds and not a wall, otherwise {@code false}.
+     */
     private boolean isValidStep(Vertex v) {
         return v.getX() >= 0 && v.getX() < maze_matrix[0].length && v.getY() >= 0 && v.getY() < maze_matrix.length && maze_matrix[v.getY()][v.getX()] == 0;
     }
-
 
     private class NodeState {
         Vertex vertex;
@@ -208,6 +253,14 @@ public class Searcher {
             this.vertex = vertex;
             this.parent = parent;
         }
+    }
+    /**
+     * Gets the current maze matrix.
+     *
+     * @return The 2D integer array representing the maze.
+     */
+    public int[][] getMaze_matrix(){
+        return maze_matrix;
     }
 }
 
