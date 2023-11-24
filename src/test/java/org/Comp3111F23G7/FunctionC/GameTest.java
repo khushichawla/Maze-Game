@@ -1,5 +1,7 @@
 package org.Comp3111F23G7.FunctionC;
 
+import org.Comp3111F23G7.FunctionA.MazeGenerator;
+import org.Comp3111F23G7.Vertex;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import java.io.ByteArrayOutputStream;
@@ -37,14 +39,14 @@ public class GameTest {
         int[] oldJerry = {-1, -1};
         int[] tom = {2, 2};
         int[] oldTom = {-1, -1};
-
+        Vertex end = new Vertex(0,0);
         int[][] expectedMaze = {
                 {0, 0, 0},
                 {0, 2, 0},
                 {0, 0, 3}
         };
 
-        Game.updateMaze(maze, jerry, oldJerry, tom, oldTom);
+        Game.updateMaze(maze, jerry, oldJerry, tom, oldTom, end);
 
         Assertions.assertArrayEquals(expectedMaze, maze);
     }
@@ -67,9 +69,10 @@ public class GameTest {
         // Redirect System.in to provide the predefined user input
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
-
+        Vertex end = new Vertex(0,0);
+        MazeGenerator maze = new MazeGenerator(30,30);
         // Call the playGame function
-        Game.playGame(maze, jerry, tom);
+        Game.playGame(maze, jerry, tom, maze);
 
         // Verify the expected outcome
         assertEquals(3, jerry[0]);
