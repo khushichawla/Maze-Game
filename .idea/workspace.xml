@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bf68802-0096-4d27-8ee5-1c52e68606c7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="2bf68802-0096-4d27-8ee5-1c52e68606c7" name="Changes" comment="Add GUI to Function C">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/Comp3111F23G7/FunctionC/MainProgramC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/Comp3111F23G7/FunctionC/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/Comp3111F23G7/FunctionC/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,12 +19,25 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/presudo_main" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -37,20 +52,22 @@
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2Xsfy9Zihreik2T2TVYJYYrMeaT" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "android.gradle.sync.needed": "true",
-    "git-widget-placeholder": "main",
-    "last_directory_selection": "/Users/vedikasaini/IdeaProjects/Comp3111F23G7/src/main/java/org/Comp3111F23G7"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;android.gradle.sync.needed&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Vedika&quot;,
+    &quot;last_directory_selection&quot;: &quot;/Users/vedikasaini/IdeaProjects/Comp3111F23G7/src/main/java/org/Comp3111F23G7&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -60,6 +77,35 @@
       <option name="presentableId" value="Default" />
       <updated>1699422959442</updated>
     </task>
+    <task id="LOCAL-00001" summary="Add GUI to Function C">
+      <option name="closed" value="true" />
+      <created>1700838375934</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1700838375934</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Changed shortest path colour. Updated walls = 1 and clear = 0 in Function A." />
+    <MESSAGE value="Add GUI to Function C" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add GUI to Function C" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Comp3111F23G7$MazeGUITest_loadMazeFromFile_ValidFilePath_ReturnsMazeArray.ic" NAME="MazeGUITest.loadMazeFromFile_ValidFilePath_ReturnsMazeArray Coverage Results" MODIFIED="1700412470536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G7$MazeGUITest_testLoadMazeFromFileIOException.ic" NAME="MazeGUITest.testLoadMazeFromFileIOException Coverage Results" MODIFIED="1700387497264" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G7$MazeGUITest_createAndShowMazeGUI_InvalidMaze_DoesNotCreateAndDisplayGUI.ic" NAME="MazeGUITest.createAndShowMazeGUI_InvalidMaze_DoesNotCreateAndDisplayGUI Coverage Results" MODIFIED="1700413533637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G7$MazeGeneratorTest_testSaveMazeToFileIOException.ic" NAME="MazeGeneratorTest.testSaveMazeToFileIOException Coverage Results" MODIFIED="1700386653359" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G7$GameTest.ic" NAME="GameTest Coverage Results" MODIFIED="1700659887646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G7$MazeGUITest.ic" NAME="MazeGUITest Coverage Results" MODIFIED="1700473215637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G7$MazeGeneratorTest_testSaveMazeToFile.ic" NAME="MazeGeneratorTest.testSaveMazeToFile Coverage Results" MODIFIED="1700412032456" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G7$MazeGUITest_testLoadMazeFromFile.ic" NAME="MazeGUITest.testLoadMazeFromFile Coverage Results" MODIFIED="1700387280256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G7$MazeGeneratorTest_testGenerateMaze.ic" NAME="MazeGeneratorTest.testGenerateMaze Coverage Results" MODIFIED="1700411905310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G7$Tests_in__org_Comp3111F23G7_.ic" NAME="Tests in 'org.Comp3111F23G7' Coverage Results" MODIFIED="1700237923402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G7$MazeGUITest_createAndShowMazeGUI_MazeWithInvalidColor_PanelsHaveDefaultBackgroundColor.ic" NAME="MazeGUITest.createAndShowMazeGUI_MazeWithInvalidColor_PanelsHaveDefaultBackgroundColor Coverage Results" MODIFIED="1700415059361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G7$MazeGUITest_testCreateAndShowMazeGUI.ic" NAME="MazeGUITest.testCreateAndShowMazeGUI Coverage Results" MODIFIED="1700412480398" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Comp3111F23G7$MazeGeneratorTest.ic" NAME="MazeGeneratorTest Coverage Results" MODIFIED="1700473241251" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

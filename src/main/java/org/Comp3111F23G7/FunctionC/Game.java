@@ -14,24 +14,21 @@ public class Game {
         mazeGenerator.generateMaze();
         mazeGenerator.saveMazeToFile("maze.txt");
         int[][] maze = MazeGUI.loadMazeFromFile("maze.txt");
-
+//        System.out.println(maze[0].length);
         Vertex start = mazeGenerator.getPointStart();
         Vertex end = mazeGenerator.getPointEnd();
 
-        int[] jerry = {start.getY(), start.getX()};
+        int[] jerry = {start.getY(), start.getX()+1};
         int[] oldJerry={-1,-1};
-        int[] tom = {end.getY(), end.getX()};
+        int[] tom = {end.getY(), end.getX()-1};
         int[] oldTom={-1,-1};
-        System.out.println(start.getY());
-        System.out.println(start.getX());
+//        System.out.println(start.getY());
+//        System.out.println(start.getX());
         updateMaze(maze,jerry,oldJerry,tom, oldTom, end);
-
         for(int i=0; i<30; i++){
             for(int j=0; j<30; j++){
                 mazeGenerator.maze[i][j] = (char) (maze[i][j] + '0');
-                System.out.print(maze[i][j]);
             }
-            System.out.println("\n");
         }
         mazeGenerator.saveMazeToFile("maze.txt");
         int[][] nmaze = MazeGUI.loadMazeFromFile("maze.txt");
@@ -66,7 +63,7 @@ public class Game {
     public static void updateMaze(int[][] maze, int[] jerry, int[] oldJerry, int[] tom, int[] oldTom, Vertex end) {
         int rowJ = jerry[0];
         int colJ = jerry[1];
-        if(maze[rowJ][colJ] == 0 || maze[rowJ][colJ]==2 || maze[rowJ][colJ]==7){
+        if(maze[rowJ][colJ] == 0 ){
             maze[rowJ][colJ]=6;
         }
         if(colJ == 1){
@@ -86,12 +83,12 @@ public class Game {
         if(oldTom[0]!=-1 && oldTom[1]!=-1){
             int rowOT = oldTom[0];
             int colOT = oldTom[1];
-            if(end.getY()==rowOT && end.getX()==colOT){
-                maze[rowT][colT]=3;
-            }
-            else{
+//            if(end.getY()==rowOT && end.getX()==colOT){
+//                maze[rowT][colT]=3;
+//            }
+//            else{
                 maze[rowOT][colOT]=0;
-            }
+//            }
         }
     }
 
@@ -110,7 +107,7 @@ public class Game {
         while(true){
             System.out.println("Jerry's position is denoted by orange square and Tom's position is denoted by pink square ");
             System.out.print("Enter Jerry's next move (WASD), Press Q to exit the game: ");
-            System.out.println("\n");
+//            System.out.println("\n");
             String input = scanner.nextLine();
             int[] jerryMove = calculateNextMove(jerry, input);
             if (jerryMove[0] == -1 && jerryMove[1] == -1) {
@@ -122,12 +119,6 @@ public class Game {
                 jerry[0] = jerryMove[0];
                 jerry[1] = jerryMove[1];
                 updateMaze(maze, jerry, oldJerry, tom, oldTom, end);
-                for(int i=0; i<30; i++){
-                    for(int j=0; j<30; j++){
-                        System.out.print(maze[i][j]);
-                    }
-                    System.out.println("\n");
-                }
 
                 for(int i=0; i<2; i++){
                     int y = path[countV].getX();
@@ -209,7 +200,7 @@ public class Game {
     }
 
     public static boolean isValidMove(int[] move, int[][] maze) {
-        if(move[0]==32 || move[1]==32){
+        if(move[0]==31 || move[1]==31 || move[0]==30 || move[1]==30){
             return false;
         }
         int row = move[0];
