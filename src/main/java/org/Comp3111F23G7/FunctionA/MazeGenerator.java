@@ -183,14 +183,14 @@ public class MazeGenerator {
             boolean started = false;
 
             // adding top border to the maze
-            for (int i = 0; i < 32; i++) {
-                writer.write('4');
-            }
+//            for (int i = 0; i < 32; i++) {
+//                writer.write('4');
+//            }
 
-            writer.write("\n");
+//            writer.write("\n");
             for (int i = 0; i < rows; i++) {
-                if (i == start.r) writer.write('7');
-                else writer.write('4');
+//                if (i == start.r) writer.write('7');
+//                else writer.write('4');
                 for (int j = 0; j < cols; j++) {
                     if (i == 0 || i == rows - 1 || j == 0 || j == cols - 1) {
                         if (i == start.r && j == start.c) {
@@ -208,15 +208,15 @@ public class MazeGenerator {
                         } else writer.write(maze[i][j]);
                     }
                 }
-                if (i == end.r) writer.write('3');
-                else writer.write('4');
+//                if (i == end.r) writer.write('3');
+//                else writer.write('4');
                 writer.write("\n");
             }
 
             // adding bottom border to the maze
-            for (int i = 0; i < 32; i++) {
-                writer.write('4');
-            }
+//            for (int i = 0; i < 32; i++) {
+//                writer.write('4');
+//            }
         } catch (IOException e) {
             e.printStackTrace();
         }
