@@ -9,33 +9,7 @@ import java.util.Scanner;
 
 public class Game {
 
-    public static void main(String[] args) {
-        MazeGenerator mazeGenerator = new MazeGenerator(30, 30);
-        mazeGenerator.generateMaze();
-        mazeGenerator.saveMazeToFile("maze.txt");
-        int[][] maze = MazeGUI.loadMazeFromFile("maze.txt");
-//        System.out.println(maze[0].length);
-        Vertex start = mazeGenerator.getPointStart();
-        Vertex end = mazeGenerator.getPointEnd();
 
-        int[] jerry = {start.getY(), start.getX()+1};
-        int[] oldJerry={-1,-1};
-        int[] tom = {end.getY(), end.getX()-1};
-        int[] oldTom={-1,-1};
-//        System.out.println(start.getY());
-//        System.out.println(start.getX());
-        updateMaze(maze,jerry,oldJerry,tom, oldTom, end);
-        for(int i=0; i<30; i++){
-            for(int j=0; j<30; j++){
-                mazeGenerator.maze[i][j] = (char) (maze[i][j] + '0');
-            }
-        }
-        mazeGenerator.saveMazeToFile("maze.txt");
-        int[][] nmaze = MazeGUI.loadMazeFromFile("maze.txt");
-        SwingUtilities.invokeLater(() -> MazeGUI.createAndShowMazeGUI(nmaze));
-
-        playGame(maze,jerry, tom, mazeGenerator, end);
-    }
 
     /**
      * printMaze function to check if the given indices are valid
@@ -92,6 +66,11 @@ public class Game {
         }
     }
 
+    public static Vertex[] newPath(int[] jerry, int[] tom, int[][] maze){
+        Searcher s =  new Searcher(maze);
+        Vertex[] path = s.dijkstra(new Vertex(tom[1],tom[0]), new Vertex(jerry[1],jerry[0]));
+        return path;
+    }
     public static void playGame(int[][] maze, int[] jerry, int[] tom, MazeGenerator mazeGenerator, Vertex end) {
         int[] exit= {tom[0], tom[1]};
         Scanner scanner = new Scanner(System.in);
@@ -103,6 +82,7 @@ public class Game {
 
         int[] oldJerry = new int[2];
         int[] oldTom = new int[2];
+
         // Get the player's input for Jerry's move
         while(true){
             System.out.println("Jerry's position is denoted by orange square and Tom's position is denoted by pink square ");
@@ -123,19 +103,24 @@ public class Game {
                 for(int i=0; i<2; i++){
                     int y = path[countV].getX();
                     int x = path[countV].getY();
-                    if(countV<size && rev==0){
-                        countV++;
+                    countV++;
+//                    if(countV<size ){
+//                        countV++;
+//                        break;
+//                    }
+                    if(countV == size ){
+                        path=newPath(tom,jerry,maze);
+                        size=path.length;
+                        countV=0;
+                        break;
                     }
-                    if(countV == size){
-                        rev=1;
-                    }
-                    if((countV<size && rev==1) || y==0) {
-                        if (countV - 1 > 0) {
-                            countV--;
-                        } else {
-                            countV++;
-                        }
-                    }
+//                    if((countV<size && rev==1) || y==0) {
+//                        if (countV - 1 > 0) {
+//                            countV--;
+//                        } else {
+//                            countV++;
+//                        }
+//                    }
                     oldTom[0] = tom[0];
                     oldTom[1] = tom[1];
                     tom[0] = x;
@@ -205,7 +190,7 @@ public class Game {
         }
         int row = move[0];
         int col = move[1];
-        return maze[row][col] == 0;
+        return (maze[row][col] == 0 || maze[row][col] == 8);
     }
 
 

@@ -70,9 +70,9 @@ public class GameTest {
         InputStream inputStream = new ByteArrayInputStream(userInput.getBytes());
         System.setIn(inputStream);
         Vertex end = new Vertex(0,0);
-        MazeGenerator maze = new MazeGenerator(30,30);
+        MazeGenerator mazeNew = new MazeGenerator(30,30);
         // Call the playGame function
-        Game.playGame(maze, jerry, tom, maze);
+        Game.playGame(maze, jerry, tom, mazeNew, end);
 
         // Verify the expected outcome
         assertEquals(3, jerry[0]);

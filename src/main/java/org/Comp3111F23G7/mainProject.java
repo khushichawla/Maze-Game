@@ -2,53 +2,37 @@ package org.Comp3111F23G7;
 
 import org.Comp3111F23G7.FunctionA.MazeGUI;
 import org.Comp3111F23G7.FunctionA.MazeGenerator;
-import org.Comp3111F23G7.FunctionB.OutputMaze;
-import org.Comp3111F23G7.FunctionB.Searcher;
-import java.util.List;
-import org.Comp3111F23G7.Vertex;
-
+import org.Comp3111F23G7.FunctionC.Game;
 import javax.swing.*;
-
 
 public class mainProject {
     public static void main(String[] args) {
-        int rows = 30;
-        int cols = 30;
 
-        MazeGenerator mazeGenerator = new MazeGenerator(rows, cols);
+        MazeGenerator mazeGenerator = new MazeGenerator(30, 30);
         mazeGenerator.generateMaze();
         mazeGenerator.saveMazeToFile("maze.txt");
-
-        // Load the maze from the text file
         int[][] maze = MazeGUI.loadMazeFromFile("maze.txt");
 
-//         Create and show the GUI maze
-        SwingUtilities.invokeLater(() -> MazeGUI.createAndShowMazeGUI(maze));
-//        MazeGUI mazeGUI = new MazeGUI(maze);
+        Vertex start = mazeGenerator.getPointStart();
+        Vertex end = mazeGenerator.getPointEnd();
 
-        Searcher s = new Searcher(maze);
-        Vertex[] path = s.bfs(mazeGenerator.getPointStart(),mazeGenerator.getPointEnd());
-        int shortestpathlen = path.length;
-        List<Vertex[]> altpaths = s.findDistinctPaths(mazeGenerator.getPointStart(),mazeGenerator.getPointEnd(), 5);
-        OutputMaze m = null;
-        try {
-            m = new OutputMaze(maze, shortestpathlen, mazeGenerator.getPointStart(),mazeGenerator.getPointEnd());
-            m.colorMazeWithPath(path);
-            m.colorMazeWithMultiPath(altpaths, shortestpathlen);
-            m.outputTextMaze();
-            // m.printPaths(altpaths);
-        } catch (Exception e) {
-            System.out.println(e);
-        } finally {
-            if (m != null) {
-                m.closeFileWriter();
+        Game game = new Game();
+
+        int[] jerry = {start.getY(), start.getX()+1};
+        int[] oldJerry={-1,-1};
+        int[] tom = {end.getY(), end.getX()-1};
+        int[] oldTom={-1,-1};
+
+        Game.updateMaze(maze,jerry,oldJerry,tom, oldTom, end);
+        for(int i=0; i<30; i++){
+            for(int j=0; j<30; j++){
+                mazeGenerator.maze[i][j] = (char) (maze[i][j] + '0');
             }
         }
+        mazeGenerator.saveMazeToFile("maze.txt");
+        int[][] nmaze = MazeGUI.loadMazeFromFile("maze.txt");
+        SwingUtilities.invokeLater(() -> MazeGUI.createAndShowMazeGUI(nmaze));
 
-//        int[][] mazeSP = MazeGUI.loadMazeFromFile("maze_output.txt");
-//        SwingUtilities.invokeLater(() -> MazeGUI.createAndShowMazeGUI(mazeSP));
-        int[][] mazeSP = MazeGUI.loadMazeFromFile("maze_output.txt");
-        SwingUtilities.invokeLater(() -> MazeGUI.createAndShowMazeGUI(mazeSP));
-
+        game.playGame(maze,jerry, tom, mazeGenerator, end);
     }
 }
