@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bf68802-0096-4d27-8ee5-1c52e68606c7" name="Changes" comment="Add GUI to Function C">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/Comp3111F23G7/FunctionC/MainProgramC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/Comp3111F23G7/FunctionC/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/Comp3111F23G7/FunctionC/Game.java" afterDir="false" />
-    </list>
+    <list default="true" id="2bf68802-0096-4d27-8ee5-1c52e68606c7" name="Changes" comment="Deleted unrelated files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,6 +35,9 @@
   <component name="Git.Merge.Settings">
     <option name="BRANCH" value="origin/presudo_main" />
   </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="origin/presudo_main" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -59,15 +58,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;android.gradle.sync.needed&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Vedika&quot;,
-    &quot;last_directory_selection&quot;: &quot;/Users/vedikasaini/IdeaProjects/Comp3111F23G7/src/main/java/org/Comp3111F23G7&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "android.gradle.sync.needed": "true",
+    "git-widget-placeholder": "main",
+    "last_directory_selection": "/Users/vedikasaini/IdeaProjects/Comp3111F23G7/src/main/java/org/Comp3111F23G7"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -85,13 +84,23 @@
       <option name="project" value="LOCAL" />
       <updated>1700838375934</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Deleted unrelated files">
+      <option name="closed" value="true" />
+      <created>1700890390626</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700890390626</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Changed shortest path colour. Updated walls = 1 and clear = 0 in Function A." />
     <MESSAGE value="Add GUI to Function C" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add GUI to Function C" />
+    <MESSAGE value="Writing Junit5 test case" />
+    <MESSAGE value="Deleted unrelated files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deleted unrelated files" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Comp3111F23G7$MazeGUITest_loadMazeFromFile_ValidFilePath_ReturnsMazeArray.ic" NAME="MazeGUITest.loadMazeFromFile_ValidFilePath_ReturnsMazeArray Coverage Results" MODIFIED="1700412470536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

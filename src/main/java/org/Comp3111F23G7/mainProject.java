@@ -23,7 +23,7 @@ public class mainProject {
         int[] tom = {end.getY(), end.getX()-1};
         int[] oldTom={-1,-1};
 
-        Game.updateMaze(maze,jerry,oldJerry,tom, oldTom, end);
+        Game.updateMaze(maze,jerry,oldJerry,tom, oldTom);
         for(int i=0; i<30; i++){
             for(int j=0; j<30; j++){
                 mazeGenerator.maze[i][j] = (char) (maze[i][j] + '0');
@@ -33,6 +33,6 @@ public class mainProject {
         int[][] nmaze = MazeGUI.loadMazeFromFile("maze.txt");
         SwingUtilities.invokeLater(() -> MazeGUI.createAndShowMazeGUI(nmaze));
 
-        game.playGame(maze,jerry, tom, mazeGenerator, end);
+        game.playGame(maze,jerry, tom, mazeGenerator);
     }
 }
