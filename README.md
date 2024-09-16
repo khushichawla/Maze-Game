@@ -1,5 +1,3 @@
-<img width="742" alt="Screenshot 2023-11-25 at 1 27 36 PM" src="https://github.com/khushichawla/Comp3111F23G7/assets/77114872/443bf980-0a05-4b44-86b5-4f1a958a2500">
-
 **To play the game**
 - Run the org/Comp3111F23G7/mainProject.java
 - To control Jerry's movements type W = up, A = left, S = down, D = right in your terminal
